@@ -14,20 +14,20 @@
     <!-- <link rel="stylesheet" href="style.css"> -->
     <style>
         body {
-            background-image: url('__Plakat_extern.jpg');
+            /* background-image: url('__Plakat_extern.jpg'); */
             background-size: cover;
             background-repeat: no-repeat;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #360202;
+            background-color: #743d3d;
         }
         .container {
             background-image: url('img2.avif');
             background-size: cover;
             max-width: 800px;
             margin: 10px auto;
-            padding: 203px;
+            padding: 20px;
             background-color: #531a1a;
             box-shadow: 0 2px 4px rgba(94, 35, 35, 0.1);
         }
@@ -35,22 +35,93 @@
             font-size: 36px;
             color: #007BFF;
             margin-bottom: 10px;
-        }        
-        button {
+        }
+
+        .count-unit {
+        display: inline-block;
+        text-align: center;
+        margin: 0 1px;
+        }
+
+        .count-unit span:first-child {
+        display: block;
+        font-size: 120px;
+
+        }
+
+        .count-unit span:last-child {
+        font-size: 30px;
+        }
+        #counter {
+            text-align: center;
+            background-image: url('background.jpg');
+            background-size: cover;
+            margin: 10px auto;
+            padding: 50px;
+            background-color: #531a1a;
+            box-shadow: 0 2px 4px rgba(94, 35, 35, 0.1);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #archive {
+            margin: 20px ;
+            margin-left: 50px;
+            border-color: #240f0f;
+            border-collapse: collapse;
+            border-width:  3px;
+            background-clip: text;
+            text-align: left;
+            border-radius: 10%;
+            color: #b38124;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #title-svg {
+            margin: 0 auto;
+            text-align: center;
+        }
+        footer {
             font-size: 10px;
             color: #497db4;
             border-color: #360202;
             margin-bottom: 10px;
-            /* margin-top: 10px; */
+        }
+        .title-bar {
+            background-image: linear-gradient(to bottom, #000000, #743d3d); /* add this */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
     </style>
 </head>
 
-<body
+<body>
+<div class="title-bar">
+    <button id="archive" onclick="alert('to be implemented')">Archive</button>
+    <svg id="title-svg" width="200" height="30" viewBox="0 0 200 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <text x="100" y="20" font-size="24" font-family="Arial, sans-serif" text-anchor="middle" fill="#1f1212">Fete du See</text>
+    </svg>
 
-<button onclick="alert('Hallo Welt!')"> Archive</button>
+</div>
 
-<img >
+<div id="counter">
+    <h2>Countdown bis zur Fete du See!</h2>
+    <div class="count-unit">
+        <span id="days">00</span>
+        <span>TAGE</span>
+    </div>
+    <div class="count-unit">
+        <span id="hours">00</span>
+        <span>STUNDEN</span>
+    </div>
+    <div class="count-unit">
+        <span id="minutes">00</span>
+        <span>MINUTEN</span>
+    </div>
+    <div class="count-unit">
+        <span id="seconds">00</span>
+        <span>SEKUNDEN</span>
+    </div>
+</div>
+<script src="counter.js"></script>
 
 <div class="container">
 <h1> Kultur Insel 11111</h1>
@@ -61,11 +132,13 @@
 
     But because there is nowhere where people are free, it is precisely the union of fusionists from all countries and vacation communism that makes us feel that we want more than what we are offered in this life.</p>
 <footer>
-    <button >Jobs</button>
-    <button >Kontakt</button>
-    <button >Presse</button>
-    <button >Impressum</button>
-    <button >Datenschutz</button>
+    <div class="footer-bar">
+        <button >Jobs</button>
+        <button >Kontakt</button>
+        <button >Presse</button>
+        <button >Impressum</button>
+        <button >Datenschutz</button>
+    </div>
 </footer>
 </body>
 </html>
