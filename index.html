@@ -11,7 +11,7 @@
     <meta name="author" content="Dein Name">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kultur Insel</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
             /* background-image: url('__Plakat_extern.jpg'); */
@@ -74,21 +74,49 @@
             color: #b38124;
             font-family: Arial, Helvetica, sans-serif;
         }
+        #archive:hover {
+            opacity: 0.7;
+        }
         #title-svg {
             margin: 0 auto;
             text-align: center;
-        }
-        footer {
-            font-size: 10px;
-            color: #497db4;
-            border-color: #360202;
-            margin-bottom: 10px;
         }
         .title-bar {
             background-image: linear-gradient(to bottom, #000000, #743d3d); /* add this */
             display: flex;
             justify-content: center;
             align-items: center;
+        }
+        .fa {
+            padding: 20px;
+            text-decoration: none;
+            border-radius: 20%;
+            font-size: 20px;
+        }
+        .fa:hover {
+            opacity: 0.7;
+        }
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+        .fa-instagram {
+            background: #55ACEE;
+            color: white;
+        }
+        #social-media{
+            margin: 20px ;
+            margin-right: 50px;
+            text-align: right;
+        }
+        #info-buttons {
+            margin: 20px ;
+            margin-left: 50px;
+            text-align: left;
+        }
+        .footer-bar {
+            display: flex;
+            justify-content: space-between;
         }
     </style>
 </head>
@@ -133,11 +161,17 @@
     But because there is nowhere where people are free, it is precisely the union of fusionists from all countries and vacation communism that makes us feel that we want more than what we are offered in this life.</p>
 <footer>
     <div class="footer-bar">
-        <button >Jobs</button>
-        <button >Kontakt</button>
-        <button >Presse</button>
-        <button >Impressum</button>
-        <button >Datenschutz</button>
+        <div id="info-buttons">
+            <button >Jobs</button>
+            <button >Kontakt</button>
+            <button >Presse</button>
+            <button >Impressum</button>
+            <button >Datenschutz</button>
+        </div>
+        <div id="social-media">
+            <a href="#" class="fa fa-facebook" aria-label="Facebook page"></a>
+            <a href="#" class="fa fa-instagram" aria-label="Instagram page"></a>
+        </div>
     </div>
 </footer>
 </body>
