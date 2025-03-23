@@ -1,178 +1,239 @@
 <!DOCTYPE html>
-
-
 <html lang="de">
-
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Beschreibung der Webseite">
-    <meta name="keywords" content="HTML, CSS, Webentwicklung">
-    <meta name="author" content="Dein Name">
+    <meta name="description" content="Kultur Insel - Fete du See - Kulturveranstaltungen am See">
+    <meta name="keywords" content="Kultur Insel, Fete du See, Veranstaltungen, Festival, Kultur">
+    <meta name="author" content="Kultur Insel Team">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kultur Insel</title>
+    <title>Kultur Insel - Fete du See</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         body {
-            /* background-image: url('__Plakat_extern.jpg'); */
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100%;
             background-size: cover;
             background-repeat: no-repeat;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #743d3d;
+            color: #f0e6d2;
+            overflow-y: auto;
         }
-        .container {
-            background-image: url('img2.avif');
-            background-size: cover;
-            max-width: 800px;
-            margin: 10px auto;
-            padding: 20px;
-            background-color: #531a1a;
-            box-shadow: 0 2px 4px rgba(94, 35, 35, 0.1);
-        }
-        h1 {
-            font-size: 36px;
-            color: #007BFF;
-            margin-bottom: 10px;
-        }
-
-        .count-unit {
-        display: inline-block;
-        text-align: center;
-        margin: 0 1px;
-        }
-
-        .count-unit span:first-child {
-        display: block;
-        font-size: 120px;
-
-        }
-
-        .count-unit span:last-child {
-        font-size: 30px;
-        }
-        #counter {
-            text-align: center;
-            background-image: url('background.jpg');
-            background-size: cover;
-            margin: 10px auto;
-            padding: 50px;
-            background-color: #531a1a;
-            box-shadow: 0 2px 4px rgba(94, 35, 35, 0.1);
-            font-family: Arial, Helvetica, sans-serif;
+        .title-bar {
+            background-image: linear-gradient(to bottom, #000000, #743d3d);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
         #archive {
-            margin: 20px ;
-            margin-left: 50px;
-            border-color: #240f0f;
-            border-collapse: collapse;
-            border-width:  3px;
-            background-clip: text;
-            text-align: left;
-            border-radius: 10%;
+            margin: 0;
+            padding: 12px 20px;
+            background-color: rgba(36, 15, 15, 0.7);
+            border: 2px solid #b38124;
+            border-radius: 8px;
             color: #b38124;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
         #archive:hover {
-            opacity: 0.7;
+            opacity: 0.9;
+            transform: rotate(-5deg);
+            background-color: rgba(36, 15, 15, 0.9);
         }
         #title-svg {
             margin: 0 auto;
             text-align: center;
         }
-        .title-bar {
-            background-image: linear-gradient(to bottom, #000000, #743d3d); /* add this */
+        #counter {
+            text-align: center;
+            background-image: url('images/background.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: rgba(83, 26, 26, 0.9);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            max-width: 900px;
+        }
+        #inside-counter {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .count-unit {
+            display: inline-block;
+            text-align: center;
+            margin: 10px;
+            padding: 15px;
+            min-width: 120px;
+        }
+        .count-unit span:first-child {
+            display: block;
+            font-size: 80px;
+            font-weight: 700;
+            color: #f0e6d2;
+        }
+        .count-unit span:last-child {
+            font-size: 20px;
+            font-weight: 600;
+            color: #b38124;
+        }
+        .container {
+            background-image: url('images/img2.avif');
+            background-size: cover;
+            background-position: center;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: rgba(83, 26, 26, 0.9);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            line-height: 1.6;
+        }
+        .container h1 {
+            color: #b38124;
+            border-bottom: 2px solid #b38124;
+            padding-bottom: 10px;
+        }
+        .container h2, .container h3 {
+            color: #f0e6d2;
+        }
+        p {
+            margin: 20px auto;
+            max-width: 900px;
+            padding: 20px;
+            background-color: rgba(83, 26, 26, 0.7);
+            border-radius: 10px;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+        footer {
+            bottom: 0;
+            position: fixed;
+            width: 100%;
+            background-image: linear-gradient(to top, #000000, #743d3d);
+            padding: 10px 0;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+        }
+        .footer-bar {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+        }
+        .info-buttons {
+            margin: 5px;
+            padding: 10px 15px;
+            background-color: rgba(36, 15, 15, 0.7);
+            border: 1px solid #b38124;
+            border-radius: 6px;
+            color: #b38124;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .info-buttons:hover {
+            background-color: rgba(36, 15, 15, 0.9);
+            transform: translateY(-2px);
+        }
+        #social-media {
+            display: flex;
+            gap: 15px;
+            margin: 10px 20px;
+            text-align: right;
         }
         .fa {
-            padding: 20px;
+            padding: 15px;
             text-decoration: none;
-            border-radius: 20%;
-            font-size: 20px;
+            border-radius: 50%;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            width: 18px;
+            height: 18px;
+            text-align: center;
         }
         .fa:hover {
-            opacity: 0.7;
+            opacity: 0.8;
+            transform: scale(1.1);
         }
         .fa-facebook {
             background: #3B5998;
             color: white;
         }
         .fa-instagram {
-            background: #55ACEE;
+            background: #C13584;
             color: white;
-        }
-        #social-media{
-            margin: 20px ;
-            margin-right: 50px;
-            text-align: right;
-        }
-        #info-buttons {
-            margin: 20px ;
-            margin-left: 50px;
-            text-align: left;
-        }
-        .footer-bar {
-            display: flex;
-            justify-content: space-between;
         }
     </style>
 </head>
-
 <body>
-<div class="title-bar">
-    <button id="archive" onclick="alert('to be implemented')">Archive</button>
-    <svg id="title-svg" width="200" height="30" viewBox="0 0 200 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <text x="100" y="20" font-size="24" font-family="Arial, sans-serif" text-anchor="middle" fill="#1f1212">Fete du See</text>
-    </svg>
-
-</div>
-
-<div id="counter">
-    <h2>Countdown bis zur Fete du See!</h2>
-    <div class="count-unit">
-        <span id="days">00</span>
-        <span>TAGE</span>
+    <div class="title-bar">
+        <button id="archive" onclick="alert('Archiv wird demnächst implementiert')">Archiv</button>
+        <svg id="title-svg" width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <text x="150" y="30" font-size="28" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" text-anchor="middle" fill="#b38124" font-weight="bold">Fete du See</text>
+        </svg>
     </div>
-    <div class="count-unit">
-        <span id="hours">00</span>
-        <span>STUNDEN</span>
-    </div>
-    <div class="count-unit">
-        <span id="minutes">00</span>
-        <span>MINUTEN</span>
-    </div>
-    <div class="count-unit">
-        <span id="seconds">00</span>
-        <span>SEKUNDEN</span>
-    </div>
-</div>
-<script src="counter.js"></script>
 
-<div class="container">
-<h1> Kultur Insel 11111</h1>
-<h2> Willkommen auf der Kultur Insel </h2>
-<h3> Hier finden Sie alle Informationen zu den Veranstaltungen auf der Kultur Insel </h3>
-</div>
-<p> Far away from everyday life, a very special kind of parallel society is created for five days. In a collective state of exception, a carnival of the senses unfolds in a place without time, reflecting the longing for a better world.
-
-    But because there is nowhere where people are free, it is precisely the union of fusionists from all countries and vacation communism that makes us feel that we want more than what we are offered in this life.</p>
-<footer>
-    <div class="footer-bar">
-        <div id="info-buttons">
-            <button >Jobs</button>
-            <button >Kontakt</button>
-            <button >Presse</button>
-            <button >Impressum</button>
-            <button >Datenschutz</button>
-        </div>
-        <div id="social-media">
-            <a href="#" class="fa fa-facebook" aria-label="Facebook page"></a>
-            <a href="#" class="fa fa-instagram" aria-label="Instagram page"></a>
+    <div id="counter">
+        <h1>Countdown bis zur Fete du See!</h1>
+        <div id="inside-counter">
+            <div class="count-unit">
+                <span id="days">00</span>
+                <span>TAGE</span>
+            </div>
+            <div class="count-unit">
+                <span id="hours">00</span>
+                <span>STUNDEN</span>
+            </div>
+            <div class="count-unit">
+                <span id="minutes">00</span>
+                <span>MINUTEN</span>
+            </div>
+            <div class="count-unit">
+                <span id="seconds">00</span>
+                <span>SEKUNDEN</span>
+            </div>
         </div>
     </div>
-</footer>
+    
+    <div class="container">
+        <h1>Kultur Insel</h1>
+        <h2>Willkommen auf der Kultur Insel</h2>
+        <h3>Hier finden Sie alle Informationen zu den Veranstaltungen auf der Kultur Insel</h3>
+    </div>
+    
+    <p>Fernab vom Alltag entsteht für fünf Tage eine ganz besondere Art von Parallelgesellschaft. In einem kollektiven Ausnahmezustand entfaltet sich an einem Ort ohne Zeit ein Karneval der Sinne, der die Sehnsucht nach einer besseren Welt widerspiegelt.
+    <br><br>
+    Doch weil es nirgendwo einen Ort gibt, an dem Menschen frei sind, ist es gerade die Vereinigung von Fusionisten aus allen Ländern und der Urlaubskommunismus, die uns spüren lassen, dass wir mehr wollen als das, was uns in diesem Leben geboten wird.</p>
+
+    <footer>
+        <div class="footer-bar">
+            <div>
+                <button class="info-buttons">Jobs</button>
+                <button class="info-buttons">Kontakt</button>
+                <button class="info-buttons">Presse</button>
+                <button class="info-buttons">Impressum</button>
+                <button class="info-buttons">Datenschutz</button>
+            </div>
+            <div id="social-media">
+                <a href="#" class="fa fa-facebook" aria-label="Facebook-Seite"></a>
+                <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" aria-label="Instagram-Seite"></a>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="counter.js"></script>
 </body>
 </html>

@@ -1,0 +1,54 @@
+/**
+ * Kultur Insel - Hauptstilblatt
+ * 
+ * Dieses Stylesheet definiert das Design und Layout der Kultur Insel Website.
+ * Es enthält alle Stile für die Webseite, einschließlich Layout, Farben und Responsive Design.
+ * 
+ * @author Kultur Insel Team
+ * @version 1.0
+ */
+
+/* Grundlegende Stile und Reset */
+
+/* Responsive Design für verschiedene Bildschirmgrößen */
+@media (max-width: 768px) {
+    .title-bar {
+        flex-direction: column;
+        padding: 10px;
+    }
+    
+    #archive {
+        margin-bottom: 10px;
+    }
+    
+    .count-unit span:first-child {
+        font-size: 60px;
+    }
+    
+    .footer-bar {
+        flex-direction: column;
+    }
+    
+    #social-media {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .count-unit {
+        min-width: 80px;
+    }
+    
+    .count-unit span:first-child {
+        font-size: 40px;
+    }
+    
+    .count-unit span:last-child {
+        font-size: 16px;
+    }
+    
+    .container, #counter, p {
+        padding: 15px;
+        margin: 10px auto;
+    }
+}
