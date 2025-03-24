@@ -161,7 +161,6 @@
             </div>
         </div>
         <script src="counter.js"></script>
-        <script src="mobile-audio.js"></script>
         <script>
             window.addEventListener('scroll', function() {
                 const banner = document.querySelector('.banner');

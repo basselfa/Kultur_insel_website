@@ -10,7 +10,6 @@
     padding: 10px 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.0);
     gap: 15px;
-    box-sizing: border-box;
 }
 #archive, #music {
     background-color: transparent;
@@ -56,9 +55,6 @@ footer {
     margin-left: 15px;
     margin-bottom: -15px;
     flex-wrap: wrap;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 0 10px;
 }
 .info-buttons {
     margin: 5px;

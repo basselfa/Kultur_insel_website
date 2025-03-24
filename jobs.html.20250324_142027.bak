@@ -6,7 +6,6 @@
     <title>Stellenangebote - Kultur Insel</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="responsive.css">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -41,8 +40,6 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             text-align: center;
             color: #f0e6d2;
-            width: 90%;
-            max-width: 900px;
         }
         h1 {
             font-size: 28px;

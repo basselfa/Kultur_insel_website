@@ -1,0 +1,2 @@
+// This file is intentionally left empty as it was referenced in menu.html but doesn't exist
+// The references to header-placeholder and footer-placeholder have been replaced with actual header and footer elements

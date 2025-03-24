@@ -10,7 +10,6 @@
         <title>Kultur Insel - Fete du See</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="responsive.css">
         <style>
 
             body {
@@ -21,6 +20,7 @@
                 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 margin: 0;
                 padding: 0;
+                background-color: transparent;
                 background-color: rgb(21, 15, 73);
             }
             .banner {
@@ -42,7 +42,6 @@
                 height: 100vh;
                 object-fit: cover;
                 animation: fadeIn 2s forwards;
-                max-width: 100%;
             }
             #banner-text {
                 color: white;
@@ -61,7 +60,7 @@
             }
             .counter {
                 background-image: url("images/counter.jpg");
-                min-height: 100vh;
+                height: 100vh;
                 text-align: center;
                 display: flex;
                 justify-content: center;
@@ -73,7 +72,6 @@
                 border-radius: 10px;
                 transition: opacity 0.7s ease-in-out;
                 color: white;
-                box-sizing: border-box;
             }
             #inside-counter {
                 display: flex;
@@ -161,7 +159,6 @@
             </div>
         </div>
         <script src="counter.js"></script>
-        <script src="mobile-audio.js"></script>
         <script>
             window.addEventListener('scroll', function() {
                 const banner = document.querySelector('.banner');
