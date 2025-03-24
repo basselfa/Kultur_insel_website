@@ -1,5 +1,6 @@
 .title-bar {
     position: fixed;
+    z-index: 2;
     top: 0;
     width: 100%;
     background-image: linear-gradient(to bottom, #000000, transparent);
@@ -41,11 +42,11 @@
 }
 footer {
     position: fixed;
+    z-index: 2;
     background-color: transparent;
     width: 100%;
     bottom: 0;
     padding: 10px 0;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5); 
 }
 .footer-bar {
     display: flex;
