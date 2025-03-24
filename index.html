@@ -12,7 +12,6 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="responsive.css">
         <style>
-
             body {
                 overflow-x: hidden;
                 width: 100%;
@@ -34,7 +33,7 @@
                 align-items: center;
                 transition: opacity 0.7s ease-in-out;
             }
-            #background-video {
+            #background-banner-video,#background-counter-video{
                 position: fixed;
                 top: 0;
                 left: 0;
@@ -45,6 +44,7 @@
                 max-width: 100%;
             }
             #banner-text {
+                position: fixed;
                 color: white;
                 opacity: 0;
                 animation: fadeIn 2s forwards;
@@ -60,7 +60,9 @@
                 }
             }
             .counter {
-                background-image: url("images/counter.jpg");
+                background-image: url("images/counter.gif");
+                background-size: cover;
+                
                 min-height: 100vh;
                 text-align: center;
                 display: flex;
@@ -107,7 +109,7 @@
         </style>
     </head>
     <audio id="background-audio" autoplay loop >
-        <source src="music.mp3" type="audio/mp3">
+        <source src="music/music1.mp3" type="audio/mp3">
         Dein Browser unterstützt das Audio-Element nicht.
     </audio>
     <body>
@@ -140,8 +142,8 @@
             </div>
         </header>
         <div class="banner">
-            <video autoplay muted loop id="background-video">
-                <source src="upscaled.mp4" type="video/mp4">
+            <video autoplay muted loop id="background-banner-video">
+                <source src="video/upscaled.mp4" type="video/mp4">
                 <track src="upscaled-subtitles.vtt" kind="subtitles" srclang="de" label="Deutsch">
                 <track src="upscaled-description.vtt" kind="descriptions" srclang="de" label="Deutsch">
                 Dein Browser unterstützt kein HTML5-Video.
@@ -161,42 +163,41 @@
             </div>
         </div>
         <script src="counter.js"></script>
-        <script src="mobile-audio.js"></script>
-        <script>
-            window.addEventListener('scroll', function() {
-                const banner = document.querySelector('.banner');
-                const counter = document.querySelector('.counter');
+            <script>
+                window.addEventListener('scroll', function() {
+                    const banner = document.querySelector('.banner');
+                    const counter = document.querySelector('.counter');
 
-                const scrollPosition = window.scrollY;
-                const fadeSpeed = 1; // Hier die Scrollhöhe für das komplette Überblenden anpassen
+                    const scrollPosition = window.scrollY ;
 
-                // Berechnung der Opacity-Werte
-                let bannerOpacity = 1 - scrollPosition / fadeSpeed;
-                let counterOpacity = scrollPosition / fadeSpeed;
+                    const fadeSpeed = 100;
 
-                // Begrenzung der Opacity-Werte auf 0 und 1
-                bannerOpacity = Math.max(bannerOpacity, 0);
-                counterOpacity = Math.min(counterOpacity, 1);
+                    let bannerOpacity = 1 - scrollPosition / fadeSpeed;
+                    let counterOpacity = scrollPosition / fadeSpeed;
 
-                // Opacity anwenden
-                banner.style.opacity = bannerOpacity;
-                counter.style.opacity = counterOpacity;
-            });
-        </script>
+                    // Begrenzung der Opacity-Werte auf 0 und 1
+                    bannerOpacity = Math.max(bannerOpacity, 0);
+                    counterOpacity = Math.min(counterOpacity, 1);
+
+                    // Opacity anwenden
+                    banner.style.opacity = bannerOpacity;
+                    counter.style.opacity = counterOpacity;
+                });
+            </script>
         <footer>
             <div class="footer-bar" >
                 <div>
-                    <button class="info-buttons" style="transition: opacity 3s ease;" onclick="window.location.href='jobs.html'">Jobs</button>
+                    <button class="info-buttons"  onclick="window.location.href='jobs.html'">Jobs</button>
                     <button class="info-buttons" onclick="window.location.href='kontakt.html'">Kontakt</button>
                     <button class="info-buttons" onclick="window.location.href='presse.html'">Presse</button>
                     <button class="info-buttons" onclick="window.location.href='impressum.html'">Impressum</button>
                     <button class="info-buttons" onclick="window.location.href='datenschutz.html'">Datenschutz</button>
                 </div>
-                <script src="transition.js"></script>
                 <div id="social-media">
                     <a href="#" class="fa fa-facebook" aria-label="Facebook-Seite"></a>
                     <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" aria-label="Instagram-Seite"></a>
                 </div>
+                <script src="social_media.js"></script>
             </div>
         </footer>
     </body>

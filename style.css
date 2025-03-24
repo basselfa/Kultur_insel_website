@@ -36,6 +36,7 @@
 #title-svg:hover{
     opacity: 0.9;
     transform: scale(1.0);
+    cursor: pointer;
 }
 .menu-icon {
     margin-right: 3%;
@@ -53,8 +54,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-left: 15px;
-    margin-bottom: -15px;
+    margin: 15px;
     flex-wrap: wrap;
     width: 100%;
     box-sizing: border-box;
@@ -81,6 +81,7 @@ footer {
     gap: 15px;
     margin: 10px 20px;
     text-align: right;
+    justify-content: center;
 }
 .fa {
     padding: 15px;
@@ -91,6 +92,9 @@ footer {
     width: 18px;
     height: 18px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .fa:hover {
     opacity: 0.8;
@@ -99,13 +103,14 @@ footer {
 .fa-facebook {
     background: #3B5998;
     color: white;
+    position: relative;
 }
 .fa-instagram {
     background: #C13584;
     color: white;
+    position: relative;
 }
 
-/* Contact Form Styles */
 .contact-form {
     display: flex;
     flex-direction: column;

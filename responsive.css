@@ -5,6 +5,37 @@
     box-sizing: border-box;
 }
 
+
+/* Fix for Firefox */
+@-moz-document url-prefix() {
+    .fa {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+}
+
+/* Fix for Safari */
+@media not all and (min-resolution:.001dpcm) { 
+    @supports (-webkit-appearance:none) {
+        .fa {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+    }
+}
+
+/* Fix for Edge and IE */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .fa {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        line-height: normal !important;
+    }
+}
+
 /* General responsive adjustments */
 @media (max-width: 1200px) {
     .count-unit span:first-child {
@@ -113,6 +144,9 @@
     
     #social-media {
         margin: 10px auto;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
     }
     
     .fa {
@@ -120,6 +154,10 @@
         font-size: 16px;
         width: 16px;
         height: 16px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
     }
     
     /* Container adjustments */
@@ -149,6 +187,18 @@
     #archive, #music {
         padding: 6px 12px;
         font-size: 12px;
+    }
+    
+    /* Fix social media buttons for very small screens */
+    #social-media {
+        gap: 15px;
+    }
+    
+    .fa {
+        padding: 10px;
+        font-size: 14px;
+        width: 14px;
+        height: 14px;
     }
     
     #title-svg {
