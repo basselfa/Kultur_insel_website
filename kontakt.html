@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="responsive.css">
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript" src="emailjs-config.js" defer></script>
     <style>
         body {
             overflow-x: hidden;
@@ -190,67 +191,7 @@
             </div>
         </div>
     </main>
-    <script>
-        // Initialize EmailJS
-        (function() {
-            // Replace with your actual EmailJS public key
-            emailjs.init("YOUR_PUBLIC_KEY");
-        })();
-        
-        // Form submission handler
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            // Show loading state
-            const submitButton = this.querySelector('button[type="submit"]');
-            const originalButtonText = submitButton.textContent;
-            submitButton.textContent = 'Wird gesendet...';
-            submitButton.disabled = true;
-            
-            // Get form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Prepare template parameters
-            const templateParams = {
-                from_name: name,
-                from_email: email,
-                subject: subject,
-                message: message
-            };
-            
-            // Send email using EmailJS
-            // Replace with your actual service ID and template ID
-            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
-                .then(function() {
-                    showMessage('Ihre Nachricht wurde erfolgreich gesendet!', 'success');
-                    document.getElementById('contact-form').reset();
-                    submitButton.textContent = originalButtonText;
-                    submitButton.disabled = false;
-                })
-                .catch(function(error) {
-                    console.error('EmailJS error:', error);
-                    showMessage('Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.', 'error');
-                    submitButton.textContent = originalButtonText;
-                    submitButton.disabled = false;
-                });
-        });
-        
-        // Function to show success/error messages
-        function showMessage(text, type) {
-            const messageElement = document.getElementById('form-message');
-            messageElement.textContent = text;
-            messageElement.className = type;
-            messageElement.style.display = 'block';
-            
-            // Auto-hide message after 5 seconds
-            setTimeout(function() {
-                messageElement.style.display = 'none';
-            }, 5000);
-        }
-    </script>
+    <!-- Contact form script moved to emailjs-config.js -->
     <footer>
         <div class="footer-bar">
             <div>
