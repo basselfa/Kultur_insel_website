@@ -105,7 +105,26 @@
                 line-height: 1.8;
                 font-size: 16px;
             }
+            .menu-icon{
+                display: inline-block;
+                cursor: pointer;
+            }
 
+            .bar1, .bar2, .bar3 {
+                width: 35px;
+                height: 5px;
+                background-color: #fdfdfd;
+                margin: 6px 0;
+                transition: 0.4s;
+            }
+
+            .change .bar1 {
+                transform: translate(0, 11px) rotate(-45deg);
+            }
+            .change .bar2 {opacity: 0;}
+            .change .bar3 {
+            transform: translate(0, -11px) rotate(45deg);
+            }
         </style>
     </head>
     <audio id="background-audio" autoplay loop >
@@ -114,7 +133,7 @@
     </audio>
     <body>
         <header class="title-bar">
-            <button id="archive" onclick="alert('Archiv wird demnächst implementiert')">Archiv</button>
+            <button id="archive" onclick="alert('Wird demnächst implementiert')">Archiv</button>
             <button id="music" onclick="playPauseMusic()">Music</button>
             <script>
                 const musicButton = document.getElementById('music');
@@ -135,11 +154,16 @@
             <svg id="title-svg" width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="window.location.href='index.html'">
             <text x="150" y="30" font-size="28" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" text-anchor="middle" fill="#b38124" font-weight="bold">Kulturinsel Moabit</text>
             </svg>
-            <div class="menu-icon">
-                <a href="menu.html">
-                    <img src="images/menu.png" alt="Menü" width="30" height="30">
-                </a>
+            <div class="menu-icon" onclick="myFunction(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
             </div>
+            <script>
+                function myFunction(x) {
+                x.classList.toggle("change");
+            }
+            </script>
         </header>
         <div class="banner">
             <video autoplay muted loop id="background-banner-video">
