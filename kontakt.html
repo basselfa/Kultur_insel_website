@@ -28,8 +28,10 @@
         }
         
         .contact-container {
-            max-width: 800px;
-            margin: 40px auto;
+            animation: fadeIn 2s forwards;
+            max-width: 80%;
+            max-height: 80%;
+            margin: 70px auto;
             padding: 30px;
             background-color: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
@@ -150,7 +152,6 @@
 </header>
 <body>
 
-    
     <main>
         <div class="contact-container">
             <h1>Kontakt</h1>
@@ -189,10 +190,6 @@
             </div>
         </div>
     </main>
-    
-    <div id="footer-placeholder"></div>
-    
-    <script src="includes.js"></script>
     <script>
         // Initialize EmailJS
         (function() {
@@ -254,5 +251,20 @@
             }, 5000);
         }
     </script>
+    <footer>
+        <div class="footer-bar">
+            <div>
+                <button class="info-buttons" onclick="window.location.href='index.html'">Home</button>
+                <button class="info-buttons" onclick="window.location.href='kontakt.html'">Kontakt</button>
+                <button class="info-buttons" onclick="window.location.href='presse.html'">Presse</button>
+                <button class="info-buttons" onclick="window.location.href='impressum.html'">Impressum</button>
+                <button class="info-buttons" onclick="window.location.href='datenschutz.html'">Datenschutz</button>
+            </div>
+            <div id="social-media">
+                <a href="#" class="fa fa-facebook" aria-label="Facebook-Seite"></a>
+                <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" aria-label="Instagram-Seite"></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

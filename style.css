@@ -1,4 +1,13 @@
-.title-bar {
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}.title-bar {
     position: fixed;
     z-index: 2;
     top: 0;
@@ -44,8 +53,8 @@
 }
 footer {
     position: fixed;
+    background-image: linear-gradient(to top, #000000, transparent);
     z-index: 2;
-    background-color: transparent;
     width: 100%;
     bottom: 0;
     padding: 10px 0;
