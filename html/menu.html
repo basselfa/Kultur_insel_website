@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programm - Kulturinsel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     <style>
         body {
             overflow: auto;
@@ -29,10 +29,10 @@
         <svg id="title-svg" width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="window.location.href='index.html'">
             <text x="150" y="30" font-size="28" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" text-anchor="middle" fill="#b38124" font-weight="bold">Kulturinsel Moabit</text>
         </svg>
-        <div class="menu-icon">
-            <a href="menu.html">
-                <img src="images/menu.png" alt="Menü" width="30" height="30">
-            </a>
+        <div class="menu-icon" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
         </div>
     </header>
 
@@ -160,22 +160,7 @@
         </div>
     </footer>
 
-    <script>
-        // Menu Toggle Functionality
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
-        
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navMenu.contains(e.target) && e.target !== menuToggle) {
-                navMenu.classList.remove('active');
-            }
-        });
-    </script>
+    <script src="../js/menu-navigation.js"></script>
     
     <footer>
         <div class="footer-bar">

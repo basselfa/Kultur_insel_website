@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stellenangebote - Kultur Insel</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="../css/responsive.css">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             color: #333;
-            background-image: url('images/buehne.jpg');
+            background-image: url('../images/buehne.jpg');
             background-size: cover;
             align-items: center;
             background-color: rgb(14, 12, 90);
@@ -54,20 +54,17 @@
         <svg id="title-svg" width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="window.location.href='index.html'">
             <text x="150" y="30" font-size="28" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" text-anchor="middle" fill="#b38124" font-weight="bold">Kulturinsel Moabit</text>
         </svg>
-        <div class="menu-icon">
-            <a href="menu.html">
-                <img src="images/menu.png" alt="Menü" width="30" height="30">
-            </a>
+        <div class="menu-icon" onclick="myFunction(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
         </div>
+        <script src="../js/menu-toggle.js"></script>
     </header>
     <div class="container">
         
-        <h1>Aktuell keine Stellenausschreibungen!</h1>
-        <p>Hey, danke, dass du bei uns vorbeischaust!</p>
-        <p>Wir müssen ehrlich sein: Momentan haben wir keine offenen Stellen und bitten dich, keine Initiativbewerbungen zu schicken. Wir wissen, das klingt ein bisschen wie „Bitte nicht stören", aber wir wollen dir einfach unnötigen Aufwand ersparen.</p>
-        <p>Die gute Nachricht: Sobald bei uns was frei wird, findest du es direkt hier auf der Website. Schau also gerne mal wieder rein – wer weiß, vielleicht passt es ja bald!</p>
-        <p>Danke für dein Verständnis und bis bald!</p>
-        
+        <h1>Aktuell keine !</h1>
+
 
     </div>
 <footer>
