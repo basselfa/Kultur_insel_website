@@ -12,59 +12,40 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            position: fixed;
-            top: 0;
+            overflow-x: hidden;
             width: 100%;
             height: 100%;
             background-size: cover;
-            background-repeat: no-repeat;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #743d3d;
             color: #f0e6d2;
-            overflow-y: auto;
         }
-        .title-bar {
-            background-image: linear-gradient(to bottom, #000000, #743d3d);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-        #archive {
-            margin: 0;
-            padding: 12px 20px;
-            background-color: rgba(36, 15, 15, 0.7);
-            border: 2px solid #b38124;
-            border-radius: 8px;
-            color: #b38124;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        #archive:hover {
-            opacity: 0.9;
-            transform: rotate(-5deg);
-            background-color: rgba(36, 15, 15, 0.9);
-        }
-        #title-svg {
-            margin: 0 auto;
+        #banner {
             text-align: center;
-        }
-        #counter {
-            text-align: center;
-            background-image: url('images/background.jpg');
-            background-size: cover;
-            background-position: center;
+            background-image: url('images/buehne.jpg');
             margin: 20px auto;
+            height: 100vh;
             padding: 30px;
-            background-color: rgba(83, 26, 26, 0.9);
+            width: 100%;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
             border-radius: 10px;
-            max-width: 900px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #counter {
+            background-image: url("images/counter.jpg");
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin: 20px auto;
+            padding: 30px;
+            width: 100%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
         }
         #inside-counter {
             display: flex;
@@ -72,7 +53,6 @@
             flex-wrap: wrap;
         }
         .count-unit {
-            display: inline-block;
             text-align: center;
             margin: 10px;
             padding: 15px;
@@ -82,12 +62,12 @@
             display: block;
             font-size: 80px;
             font-weight: 700;
-            color: #f0e6d2;
+            color: #d8ccb5;
         }
         .count-unit span:last-child {
             font-size: 20px;
             font-weight: 600;
-            color: #b38124;
+            color: #f0e6d2;
         }
         .container {
             background-image: url('images/img2.avif');
@@ -106,9 +86,6 @@
             border-bottom: 2px solid #b38124;
             padding-bottom: 10px;
         }
-        .container h2, .container h3 {
-            color: #f0e6d2;
-        }
         p {
             margin: 20px auto;
             max-width: 900px;
@@ -118,122 +95,61 @@
             line-height: 1.8;
             font-size: 16px;
         }
-        footer {
-            bottom: 0;
-            position: fixed;
-            width: 100%;
-            background-image: linear-gradient(to top, #000000, #743d3d);
-            padding: 10px 0;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
-        }
-        .footer-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        .info-buttons {
-            margin: 5px;
-            padding: 10px 15px;
-            background-color: rgba(36, 15, 15, 0.7);
-            border: 1px solid #b38124;
-            border-radius: 6px;
-            color: #b38124;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-weight: 500;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .info-buttons:hover {
-            background-color: rgba(36, 15, 15, 0.9);
-            transform: translateY(-2px);
-        }
-        #social-media {
-            display: flex;
-            gap: 15px;
-            margin: 10px 20px;
-            text-align: right;
-        }
-        .fa {
-            padding: 15px;
-            text-decoration: none;
-            border-radius: 50%;
-            font-size: 18px;
-            transition: all 0.3s ease;
-            width: 18px;
-            height: 18px;
-            text-align: center;
-        }
-        .fa:hover {
-            opacity: 0.8;
-            transform: scale(1.1);
-        }
-        .fa-facebook {
-            background: #3B5998;
-            color: white;
-        }
-        .fa-instagram {
-            background: #C13584;
-            color: white;
-        }
     </style>
 </head>
 <body>
-    <div class="title-bar">
+    <header class="title-bar">
         <button id="archive" onclick="alert('Archiv wird demnächst implementiert')">Archiv</button>
-        <svg id="title-svg" width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <text x="150" y="30" font-size="28" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" text-anchor="middle" fill="#b38124" font-weight="bold">Fete du See</text>
-        </svg>
+<svg id="title-svg" width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="window.location.href='index.html'">
+  <text x="150" y="30" font-size="28" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" text-anchor="middle" fill="#b38124" font-weight="bold">Kulturinsel Moabit</text>
+</svg>
+        <div class="menu-icon">
+            <a href="menu.html">
+                <img src="images/menu.png" alt="Menü" width="30" height="30">
+            </a>
+        </div>
+    </header>
+    <div id="banner">
+        <h1>
+            <span style="display: block;">FETE DU SEE FESTIVAL</span> 
+            <span>24.08. - 26.08.2025</span>
+        </h1>
     </div>
-
     <div id="counter">
         <h1>Countdown bis zur Fete du See!</h1>
         <div id="inside-counter">
-            <div class="count-unit">
-                <span id="days">00</span>
-                <span>TAGE</span>
-            </div>
-            <div class="count-unit">
-                <span id="hours">00</span>
-                <span>STUNDEN</span>
-            </div>
-            <div class="count-unit">
-                <span id="minutes">00</span>
-                <span>MINUTEN</span>
-            </div>
-            <div class="count-unit">
-                <span id="seconds">00</span>
-                <span>SEKUNDEN</span>
-            </div>
+            <div class="count-unit"><span id="days">00</span><span>TAGE</span></div>
+            <div class="count-unit"><span id="hours">00</span><span>STUNDEN</span></div>
+            <div class="count-unit"><span id="minutes">00</span><span>MINUTEN</span></div>
+            <div class="count-unit"><span id="seconds">00</span><span>SEKUNDEN</span></div>
         </div>
     </div>
-    
-    <div class="container">
-        <h1>Kultur Insel</h1>
-        <h2>Willkommen auf der Kultur Insel</h2>
-        <h3>Hier finden Sie alle Informationen zu den Veranstaltungen auf der Kultur Insel</h3>
-    </div>
-    
-    <p>Fernab vom Alltag entsteht für fünf Tage eine ganz besondere Art von Parallelgesellschaft. In einem kollektiven Ausnahmezustand entfaltet sich an einem Ort ohne Zeit ein Karneval der Sinne, der die Sehnsucht nach einer besseren Welt widerspiegelt.
-    <br><br>
-    Doch weil es nirgendwo einen Ort gibt, an dem Menschen frei sind, ist es gerade die Vereinigung von Fusionisten aus allen Ländern und der Urlaubskommunismus, die uns spüren lassen, dass wir mehr wollen als das, was uns in diesem Leben geboten wird.</p>
-
+    <script src="counter.js"></script>
+    <!-- <script>
+        window.addEventListener('scroll', function() {
+          const secondDiv = document.getElementById('counter');
+          if (window.scrollY > window.innerHeight) {
+            secondDiv.style.display = 'flex';
+          } else {
+            secondDiv.style.display = 'none';
+          } // added closing bracket here
+        }); // added closing bracket here
+      </script> -->
     <footer>
-        <div class="footer-bar">
+        <div class="footer-bar" >
             <div>
-                <button class="info-buttons">Jobs</button>
-                <button class="info-buttons">Kontakt</button>
-                <button class="info-buttons">Presse</button>
-                <button class="info-buttons">Impressum</button>
-                <button class="info-buttons">Datenschutz</button>
+                <button class="info-buttons" onclick="window.location.href='jobs.html'">Jobs</button>
+                <button class="info-buttons" onclick="window.location.href='kontakt.html'">Kontakt</button>
+                <button class="info-buttons" onclick="window.location.href='presse.html'">Presse</button>
+                <button class="info-buttons" onclick="window.location.href='impressum.html'">Impressum</button>
+                <button class="info-buttons" onclick="window.location.href='datenschutz.html'">Datenschutz</button>
             </div>
+            <script src="transition.js"></script>
             <div id="social-media">
                 <a href="#" class="fa fa-facebook" aria-label="Facebook-Seite"></a>
                 <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" aria-label="Instagram-Seite"></a>
             </div>
         </div>
     </footer>
-    
-    <script src="counter.js"></script>
 </body>
 </html>

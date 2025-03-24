@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellenangebote - Kultur Insel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+            background-image: url('images/buehne.jpg');
+            background-size: cover;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 100px auto;
+            align-items: center;
+            margin-top: 17%;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            color: #f0e6d2;
+        }
+        
+        .jobs-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            display: block;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .jobs-icon:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+        }
+        
+        @keyframes pulseRotate {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2) rotate(5deg);
+                filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9));
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        .animate-pulse {
+            animation: pulseRotate 0.8s ease;
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #b38124;
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #b38124;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .back-link:hover {
+            color: #d9a443;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<header class="title-bar">
+    <button id="archive" onclick="alert('Archiv wird demnächst implementiert')">Archiv</button>
+    <svg id="title-svg" width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="window.location.href='index.html'">
+        <text x="150" y="30" font-size="28" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" text-anchor="middle" fill="#b38124" font-weight="bold">Kulturinsel Moabit</text>
+    </svg>
+    <div class="menu-icon">
+        <a href="menu.html">
+            <img src="images/menu.png" alt="Menü" width="30" height="30">
+        </a>
+    </div>
+</header>
+<body>
+    <div class="container">
+        
+        <h1>Aktuell keine Stellenausschreibungen!</h1>
+        <p>Hey, danke, dass du bei uns vorbeischaust!</p>
+        <p>Wir müssen ehrlich sein: Momentan haben wir keine offenen Stellen und bitten dich, keine Initiativbewerbungen zu schicken. Wir wissen, das klingt ein bisschen wie „Bitte nicht stören", aber wir wollen dir einfach unnötigen Aufwand ersparen.</p>
+        <p>Die gute Nachricht: Sobald bei uns was frei wird, findest du es direkt hier auf der Website. Schau also gerne mal wieder rein – wer weiß, vielleicht passt es ja bald!</p>
+        <p>Danke für dein Verständnis und bis bald!</p>
+        
+        <a href="index.html" class="back-link">Zurück zur Startseite</a>
+    </div>
+<footer>
+    <div class="footer-bar">
+        <div>
+            <button class="info-buttons" onclick="window.location.href='index.html'">Home</button>
+            <button class="info-buttons" onclick="window.location.href='kontakt.html'">Kontakt</button>
+            <button class="info-buttons" onclick="window.location.href='presse.html'">Presse</button>
+            <button class="info-buttons" onclick="window.location.href='impressum.html'">Impressum</button>
+            <button class="info-buttons" onclick="window.location.href='datenschutz.html'">Datenschutz</button>
+        </div>
+        <script src="transition.js"></script>
+        <div id="social-media">
+            <a href="#" class="fa fa-facebook" aria-label="Facebook-Seite"></a>
+            <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" aria-label="Instagram-Seite"></a>
+        </div>
+    </div>
+</footer>   
+
+</body>
+</html>

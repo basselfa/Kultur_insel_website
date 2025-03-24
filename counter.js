@@ -6,9 +6,7 @@ const countdownTimer = setInterval(function() {
 
     const jetzt = new Date().getTime();
     
-
     const zeitDifferenz = zielDatum - jetzt;
-
 
     const tage = Math.floor(zeitDifferenz / (1000 * 60 * 60 * 24));
     const stunden = Math.floor((zeitDifferenz % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -25,3 +23,4 @@ const countdownTimer = setInterval(function() {
         document.getElementById("counter").innerHTML = "VERANSTALTUNG HAT BEGONNEN!";
     }
 }, 1000);
+
