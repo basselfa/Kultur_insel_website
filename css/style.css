@@ -83,7 +83,9 @@ footer {
     z-index: 2;
     width: 100vw;
     bottom: 0;
-    padding: 10px 20px;
+    padding: 1vw;
+    padding-bottom: 2vw;
+    padding-right: 2vw;
 }
 .footer-bar {
     display: flex;
