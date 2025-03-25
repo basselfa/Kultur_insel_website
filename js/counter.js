@@ -36,7 +36,7 @@ window.addEventListener("scroll", function () {
     const isScrollingDown = scrollPosition > lastScrollY;
     lastScrollY = scrollPosition; // Update for next scroll event
 
-    if (isScrollingDown && window.scrollY > 2) {
+    if (isScrollingDown && window.scrollY > 1  ){
         window.scrollTo(0, document.body.scrollHeight);
     }
     else if (!isScrollingDown && window.scrollY < document.body.scrollHeight) {
