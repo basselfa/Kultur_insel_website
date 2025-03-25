@@ -92,11 +92,11 @@
             }
             .count-unit span:first-child {
                 display: block;
-                font-size: 150px;
+                font-size: 10vw ;
                 font-weight: 700;
             }
             .count-unit span:last-child {
-                font-size: 20px;
+                font-size: 2vw;
                 font-weight: 600;
                 }
             p {
@@ -111,22 +111,28 @@
         </style>
     </head>
     <audio id="background-audio" autoplay loop >
-        <source src="../music/music.mp3" type="audio/mp3">
+        <source src="../music/music1.mp3" type="audio/mp3">
         Dein Browser unterstützt das Audio-Element nicht.
     </audio>
     <body>
         <header class="title-bar">
-            <button id="archive" onclick="alert('Wird demnächst implementiert')">Archiv</button>
-            <button id="music" onclick="playPauseMusic()">Music</button>
-            <script src="../js/music-player.js"></script>
+        <div class="title-bar-content">
+            <div style="display: flex; gap: 20px;">
+                <button id="archive" onclick="alert('Wird demnächst implementiert')">Archiv</button>
+                <button id="music" onclick="playPauseMusic()">Music</button>
+            </div>
+                <script src="../js/music-player.js"></script>
+            <div>
                 <svg id="title-svg" width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="window.location.href='index.html'">
                 <text x="150" y="30" font-size="28" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" text-anchor="middle" fill="#b38124" font-weight="bold">Kulturinsel Moabit</text>
                 </svg>
+            </div>
             <div class="menu-icon" onclick="myFunction(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </div>
+        </div>
             <script src="../js/menu-toggle.js"></script>
         </header>
         <div class="banner">
@@ -153,7 +159,7 @@
         <script src="../js/counter.js"></script>
         <footer>
             <div class="footer-bar" >
-                <div>
+                <div style="display: flex; gap: 15px;">
                     <button class="info-buttons"  onclick="window.location.href='jobs.html'">Jobs</button>
                     <button class="info-buttons" onclick="window.location.href='kontakt.html'">Kontakt</button>
                     <!-- <button class="info-buttons" onclick="window.location.href='presse.html'">Presse</button> -->
