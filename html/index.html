@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="../css/responsive.css">
         <style>
             body {
-                overflow: hidden;
+                overflow: auto;
                 width: 100%;
                 height: 100%;
                 background-size: cover;
@@ -21,6 +21,9 @@
                 margin: 0;
                 padding: 0;
                 background-color: rgb(21, 15, 73);
+            }
+            body::-webkit-scrollbar {
+                display: none; /* Versteckt die Scroll-Leiste */
             }
             .banner {
                 text-align: center;

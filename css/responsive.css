@@ -1,4 +1,4 @@
-Responsive Styles for Kulturinsel Website
+/* Responsive Styles for Kulturinsel Website */
 
 /* Base responsive settings */
 * {
@@ -78,16 +78,16 @@ Responsive Styles for Kulturinsel Website
 
 /* Mobile styles */
 @media (max-width: 768px) {
-    .title-bar {
-        /* flex-direction: row; */
-        /* gap: 10px;
-        padding: 10px; */
+    /* .title-bar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
     }
     
     #archive, #music {
         padding: 8px 15px;
         font-size: 14px;
-    }
+    } */
     
     #title-svg {
         width: 200px;
