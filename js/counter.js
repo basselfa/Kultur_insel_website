@@ -24,22 +24,21 @@ const countdownTimer = setInterval(function() {
     }
 }, 1000);
 
+let lastScrollY = window.scrollY;
+
 window.addEventListener('scroll', function() {
     const banner = document.querySelector('.banner');
     const counter = document.querySelector('.counter');
+    
+    const currentScrollY = window.scrollY;
 
-    const scrollPosition = window.scrollY ;
+    if (currentScrollY > lastScrollY) {
+        banner.style.opacity = 0;
+        counter.style.opacity = 1;
+    } else if (currentScrollY < lastScrollY) {
+        banner.style.opacity = 1;
+        counter.style.opacity = 0;
+    }
 
-    const fadeSpeed = 100;
-
-    let bannerOpacity = 1 - scrollPosition / fadeSpeed;
-    let counterOpacity = scrollPosition / fadeSpeed;
-
-    // Begrenzung der Opacity-Werte auf 0 und 1
-    bannerOpacity = Math.max(bannerOpacity, 0);
-    counterOpacity = Math.min(counterOpacity, 1);
-
-    // Opacity anwenden
-    banner.style.opacity = bannerOpacity;
-    counter.style.opacity = counterOpacity;
+    lastScrollY = currentScrollY; // Aktuelle Position speichern
 });
