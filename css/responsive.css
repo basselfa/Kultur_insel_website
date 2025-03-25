@@ -97,7 +97,8 @@
 /* Small mobile styles */
 @media (max-width: 730px) {
     #background-banner-video {
-        object-position: center;
+
+        object-position: center; 
     }
     #archive {
         display: none;
