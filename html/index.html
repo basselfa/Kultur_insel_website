@@ -51,13 +51,11 @@
                 opacity: 0;
                 animation: fadeIn 2s forwards;
             }
-            @keyframes fadeIn {
-                0% {
-                    opacity: 0;
-                    transform: translateY(30px);
+            @keyframes fadeInFromDown {
+                from {
+                    transform: translateY(2px);
                 }
-                100% {
-                    opacity: 1;
+                to {
                     transform: translateY(0);
                 }
             }
@@ -78,6 +76,9 @@
                 transition: opacity 0.7s ease-in-out;
                 color: white;
                 box-sizing: border-box;
+            }
+            .counter.animate {
+                animation: fadeInFromDown ;
             }
             #inside-counter {
                 display: flex;

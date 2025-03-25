@@ -38,6 +38,7 @@ window.addEventListener("scroll", function () {
 
     if (isScrollingDown && window.scrollY > 0  ){
         window.scrollTo(0, document.body.scrollHeight);
+        counter.classList.add('animate');
     }
     else if (!isScrollingDown && window.scrollY < document.body.scrollHeight) {
         window.scrollTo(0, 0);
