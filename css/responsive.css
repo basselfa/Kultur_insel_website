@@ -110,6 +110,12 @@
         margin-top: -4px;
         align-items: right;
     }
+    .title-bar-content {
+        margin: 0.5vw !important;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
     .fa {
         padding: 10px;
         font-size: 14px;
