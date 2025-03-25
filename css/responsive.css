@@ -98,14 +98,10 @@
 @media (max-width: 730px) {
     #archive {
         display: none;
-/* 
-        margin-top: auto;
-        padding: 6px 12px;
-        font-size: 12px; */
+
     }
     #music {
         margin-top: auto;
-        /* transform: rotate(0deg) !important; */
     }
     #title-svg {
         display: none;
@@ -119,6 +115,9 @@
         font-size: 14px;
         width: 14px;
         height: 14px;
+    }
+    .footer-bar {
+        margin: 0.5vw !important;
     }
     #inside-counter {
         display: grid !important;
