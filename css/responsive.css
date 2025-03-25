@@ -107,7 +107,9 @@
         margin-top: auto;
         /* transform: rotate(0deg) !important; */
     }
-
+    #title-svg {
+        display: none;
+    }
     .menu-icon {
         margin-top: -4px;
         align-items: right;
