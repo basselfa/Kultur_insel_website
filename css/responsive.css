@@ -111,7 +111,7 @@
         align-items: right;
     }
     .title-bar-content {
-        margin: 0.5vw !important;
+        margin: 0vw !important;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
