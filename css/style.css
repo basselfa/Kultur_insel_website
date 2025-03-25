@@ -50,7 +50,7 @@ header {
     align-items: center;
 }
 #title-svg:hover{
-    opacity: 0.9;
+    opacity: 0.8;
     transform: scale(1.0);
     cursor: pointer;
 }
@@ -82,7 +82,6 @@ footer {
     width: 100vw;
     bottom: 0;
     padding: 2.5vw;
-  
 }
 .footer-bar {
     display: flex;
@@ -93,8 +92,8 @@ footer {
     
 }
 .info-buttons {
+    background-color: transparent;
     padding: 10px 15px;
-    background-color: rgba(36, 15, 15, 0.7);
     border: 1px solid #b38124;
     border-radius: 6px;
     color: #b38124;
