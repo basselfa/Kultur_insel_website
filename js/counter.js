@@ -24,3 +24,22 @@ const countdownTimer = setInterval(function() {
     }
 }, 1000);
 
+window.addEventListener('scroll', function() {
+    const banner = document.querySelector('.banner');
+    const counter = document.querySelector('.counter');
+
+    const scrollPosition = window.scrollY ;
+
+    const fadeSpeed = 100;
+
+    let bannerOpacity = 1 - scrollPosition / fadeSpeed;
+    let counterOpacity = scrollPosition / fadeSpeed;
+
+    // Begrenzung der Opacity-Werte auf 0 und 1
+    bannerOpacity = Math.max(bannerOpacity, 0);
+    counterOpacity = Math.min(counterOpacity, 1);
+
+    // Opacity anwenden
+    banner.style.opacity = bannerOpacity;
+    counter.style.opacity = counterOpacity;
+});

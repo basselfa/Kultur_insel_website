@@ -83,7 +83,6 @@
             #inside-counter {
                 display: flex;
                 justify-content: space-around;
-                text-align: center;
             }
             .count-unit {
                 text-align: center;
@@ -152,34 +151,13 @@
             </div>
         </div>
         <script src="../js/counter.js"></script>
-            <script>
-                window.addEventListener('scroll', function() {
-                    const banner = document.querySelector('.banner');
-                    const counter = document.querySelector('.counter');
-
-                    const scrollPosition = window.scrollY ;
-
-                    const fadeSpeed = 100;
-
-                    let bannerOpacity = 1 - scrollPosition / fadeSpeed;
-                    let counterOpacity = scrollPosition / fadeSpeed;
-
-                    // Begrenzung der Opacity-Werte auf 0 und 1
-                    bannerOpacity = Math.max(bannerOpacity, 0);
-                    counterOpacity = Math.min(counterOpacity, 1);
-
-                    // Opacity anwenden
-                    banner.style.opacity = bannerOpacity;
-                    counter.style.opacity = counterOpacity;
-                });
-            </script>
         <footer>
             <div class="footer-bar" >
                 <div>
                     <button class="info-buttons"  onclick="window.location.href='jobs.html'">Jobs</button>
                     <button class="info-buttons" onclick="window.location.href='kontakt.html'">Kontakt</button>
-                    <button class="info-buttons" onclick="window.location.href='presse.html'">Presse</button>
-                    <button class="info-buttons" onclick="window.location.href='impressum.html'">Impressum</button>
+                    <!-- <button class="info-buttons" onclick="window.location.href='presse.html'">Presse</button>
+                    <button class="info-buttons" onclick="window.location.href='impressum.html'">Impressum</button> -->
                     <button class="info-buttons" onclick="window.location.href='datenschutz.html'">Datenschutz</button>
                 </div>
                 <div id="social-media">

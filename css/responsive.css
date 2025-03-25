@@ -183,7 +183,14 @@
 
 /* Small mobile styles */
 @media (max-width: 480px) {
-    #archive, #music {
+    #archive {
+        display: none;
+/* 
+        margin-top: auto;
+        padding: 6px 12px;
+        font-size: 12px; */
+    }
+    #music {
         margin-top: auto;
         padding: 6px 12px;
         font-size: 12px;
@@ -192,8 +199,7 @@
         display: none;
     }
     .menu-icon {
-        
-        margin: auto;
+        margin-top: -4px;
         align-items: right;
     }
     .fa {
@@ -202,11 +208,11 @@
         width: 14px;
         height: 14px;
     }
-    
-    #social-media {
-        gap: 15px;
+    #inside-counter {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
     }
-    
     .count-unit span:first-child {
         font-size: 40px !important;
     }
