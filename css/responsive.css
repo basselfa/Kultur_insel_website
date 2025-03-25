@@ -128,13 +128,7 @@
     }
     
     /* Footer adjustments */
-    .footer-bar {
-        flex-direction: column;
-        gap: 15px;
-        margin-left: 0;
-        align-items: center;
-    }
-    
+
     .info-buttons {
         margin: 3px;
         padding: 8px 12px;
@@ -213,6 +207,7 @@
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 10px !important;
     }
+
     .count-unit span:first-child {
         font-size: 40px !important;
     }
@@ -226,7 +221,12 @@
         padding: 6px 10px;
         font-size: 11px;
     }
-    
+    #impressum {
+        display: none;
+    }
+    footer {
+        position: relative;
+    }
     /* Container further adjustments */
     .container {
         margin: 40px auto !important;
