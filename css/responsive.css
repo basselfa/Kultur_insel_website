@@ -96,6 +96,10 @@
 
 /* Small mobile styles */
 @media (max-width: 730px) {
+    #background-banner-video {
+        /* Verhindert das Dehnen bei kleinen Bildschirmgrößen */
+        object-position: center; /* Setzt das Video im Zentrum */
+    }
     #archive {
         display: none;
 
