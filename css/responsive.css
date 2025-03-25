@@ -113,7 +113,6 @@
     .title-bar-content {
         margin: 0vw !important;
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
     }
     .fa {
@@ -141,11 +140,11 @@
     
     .info-buttons {
         align-self: start !important;
-        margin-left: 0px !important;
+        margin-left: 0vw !important;
     }
     #social-media {
         align-self: end !important;
-        margin-right: 10% !important;
+        margin-right: 0vw !important;
     }
     #impressum {
         display: none;
