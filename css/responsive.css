@@ -135,12 +135,12 @@
         font-size: 12px;
     }
     
-    #social-media {
+    /* #social-media {
         margin: 10px auto;
         display: flex;
         justify-content: center;
         gap: 20px;
-    }
+    } */
     
     .fa {
         padding: 12px;
@@ -217,9 +217,12 @@
     }
     
     .info-buttons {
-        margin: 2px;
-        padding: 6px 10px;
-        font-size: 11px;
+        align-self: start !important;
+        margin-left: 0px !important;
+    }
+    #social-media {
+        align-self: end !important;
+        margin-right: 10% !important;
     }
     #impressum {
         display: none;
