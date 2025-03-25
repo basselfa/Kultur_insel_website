@@ -26,19 +26,29 @@ const countdownTimer = setInterval(function() {
 
 let lastScrollY = window.scrollY;
 
-window.addEventListener('scroll', function() {
-    const banner = document.querySelector('.banner');
-    const counter = document.querySelector('.counter');
-    
-    const currentScrollY = window.scrollY;
+window.addEventListener("scroll", function () {
+    const banner = document.querySelector(".banner");
+    const counter = document.querySelector(".counter");
 
-    if (currentScrollY > lastScrollY) {
-        banner.style.opacity = 0;
-        counter.style.opacity = 1;
-    } else if (currentScrollY < lastScrollY) {
-        banner.style.opacity = 1;
-        counter.style.opacity = 0;
+    const scrollPosition = window.scrollY;
+    const fadeSpeed = 0.02;
+
+    const isScrollingDown = scrollPosition > lastScrollY;
+    lastScrollY = scrollPosition; // Update for next scroll event
+
+    if (isScrollingDown && window.scrollY > 10) {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+    else if (!isScrollingDown && window.scrollY < document.body.scrollHeight) {
+        window.scrollTo(0, 0);
     }
 
-    lastScrollY = currentScrollY; // Aktuelle Position speichern
+    let bannerOpacity = 1 - scrollPosition / fadeSpeed;
+    let counterOpacity = scrollPosition / fadeSpeed;
+
+    bannerOpacity = Math.max(bannerOpacity, 0);
+    counterOpacity = Math.min(counterOpacity, 1);
+
+    banner.style.opacity = bannerOpacity;
+    counter.style.opacity = counterOpacity;
 });
