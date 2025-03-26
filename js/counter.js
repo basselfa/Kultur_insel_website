@@ -27,6 +27,7 @@ const countdownTimer = setInterval(function() {
 let lastScrollY = window.scrollY;
 let isCtrlPressed = false;
 
+
 window.addEventListener("keydown", function (event) {
     if (event.ctrlKey) {
         isCtrlPressed = true;
@@ -38,9 +39,16 @@ window.addEventListener("keyup", function (event) {
         isCtrlPressed = false;
     }
 });
+let lastClickTime = 0;
 
-window.addEventListener("scroll", function () {
+window.addEventListener("scroll", function () { 
+
     if (isCtrlPressed) return;
+    const currentTime = new Date().getTime();
+    if (currentTime - lastClickTime < 4000) {
+        console.log("Bitte warte 2 Sekunden, bevor du erneut klickst.");
+        return; // Verhindert weiteres Klicken für 2 Sekunden
+    }
     const banner = document.querySelector(".banner");
     const counter = document.querySelector(".counter");
 
