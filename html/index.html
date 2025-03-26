@@ -44,6 +44,7 @@
                 height: 100vh;
                 object-fit: cover;
                 animation: fadeIn 2s forwards;
+
             }
             #banner-text {
                 position: fixed;
@@ -52,11 +53,38 @@
                 animation: fadeIn 2s forwards;
             }
             @keyframes fadeInFromDown {
+                    from {
+                        transform: translatey(100vh);/* Endet an der normalen Position */
+                        opacity: 0;
+                        position: absolute;
+                    }
+                    to {
+                        transform: translateY(0vh);/* Endet an der normalen Position */
+                        opacity: 1;
+                        position: absolute;
+                    }
+                }
+            @keyframes fadeOutFromDown {
                 from {
-                    transform: translateY(2px);
+                    transform: translatey(0vh);/* Endet an der normalen Position */
+                    position: absolute;
                 }
                 to {
-                    transform: translateY(0);
+                    transform: translateY(100vh);/* Endet an der normalen Position */
+                    position: absolute;
+                    opacity: 1;
+                }
+            }
+            @keyframes fadeInFromUp {
+                from {
+                    transform: translatey(-200vh);/* Endet an der normalen Position */
+                    opacity: 0;
+                    position: absolute;
+                }
+                to {
+                    transform: translateY(-100vh);/* Endet an der normalen Position */
+                    opacity: 1;
+                    position: absolute;
                 }
             }
             .counter {
@@ -78,7 +106,10 @@
                 box-sizing: border-box;
             }
             .counter.animate {
-                animation: fadeInFromDown ;
+                animation: fadeInFromDown 1.5s ease-in-out forwards;
+            }
+            .counter.hide {
+                animation: fadeOutFromDown 1.5s ease-in-out forwards;
             }
             #inside-counter {
                 display: flex;

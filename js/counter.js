@@ -34,22 +34,35 @@ window.addEventListener("scroll", function () {
     const fadeSpeed = 0.02;
 
     const isScrollingDown = scrollPosition > lastScrollY;
+    const isScrollingUp = scrollPosition < lastScrollY;
+
     lastScrollY = scrollPosition; // Update for next scroll event
 
     if (isScrollingDown && window.scrollY > 0  ){
-        window.scrollTo(0, document.body.scrollHeight);
+        // counter.classList.remove('hide');
+
         counter.classList.add('animate');
+        console.log('scrolling down');
+        setTimeout(() => {
+            window.scrollTo(0, document.body.scrollHeight);
+        }, 200);
     }
-    else if (!isScrollingDown && window.scrollY < document.body.scrollHeight) {
-        window.scrollTo(0, 0);
+    else if ( scrollPosition!=1 && isScrollingUp && window.scrollY < document.body.scrollHeight) {
+        // counter.classList.remove('animate');
+        counter.classList.add('hide');
+        setTimeout(() => {
+            window.scrollTo(1, 1);
+        }, 9000);
+        console.log('scrolling up');
     }
+    console.log(scrollPosition);
 
-    let bannerOpacity = 1 - scrollPosition / fadeSpeed;
-    let counterOpacity = scrollPosition / fadeSpeed;
+    // let bannerOpacity = 1 - scrollPosition / fadeSpeed;
+    // let counterOpacity = scrollPosition / fadeSpeed;
 
-    bannerOpacity = Math.max(bannerOpacity, 0);
-    counterOpacity = Math.min(counterOpacity, 1);
+    // bannerOpacity = Math.max(bannerOpacity, 0);
+    // counterOpacity = Math.min(counterOpacity, 1);
 
-    banner.style.opacity = bannerOpacity;
-    counter.style.opacity = counterOpacity;
+    // banner.style.opacity = bannerOpacity;
+    // counter.style.opacity = counterOpacity;
 });
