@@ -44,6 +44,9 @@
     /* #title-svg {
         width: 250px;
     } */
+    #music {
+        transform: none !important; /* Keine Rotation */
+    }
     #inside-counter {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
@@ -92,7 +95,7 @@
     }
     #music {
         margin-top: auto;
-        transform: rotate(0vw);
+        transform: none !important; /* Keine Rotation */
     }
     #title-svg {
         display: none;
