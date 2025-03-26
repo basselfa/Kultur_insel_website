@@ -39,7 +39,7 @@ window.addEventListener("scroll", function () {
     lastScrollY = scrollPosition; // Update for next scroll event
 
     if (isScrollingDown && window.scrollY > 0  ){
-        // counter.classList.remove('hide');
+        counter.classList.remove('hide');
 
         counter.classList.add('animate');
         console.log('scrolling down');
@@ -48,7 +48,7 @@ window.addEventListener("scroll", function () {
         }, 200);
     }
     else if ( scrollPosition!=1 && isScrollingUp && window.scrollY < document.body.scrollHeight) {
-        // counter.classList.remove('animate');
+        counter.classList.remove('animate');
         counter.classList.add('hide');
         setTimeout(() => {
             window.scrollTo(1, 1);
