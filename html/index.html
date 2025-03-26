@@ -13,17 +13,16 @@
         <link rel="stylesheet" href="../css/responsive.css">
         <style>
             body {
-                /* overflow: auto; */
                 width: 100%;
                 height: 100%;
                 background-size: cover;
                 font-family: 'Nova Square','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 margin: 0;
                 padding: 0;
-                background-color: rgb(21, 15, 73);
+                background-color: rgb(15, 10, 54);
             }
             body::-webkit-scrollbar {
-                display: none; 
+                display: none;
             }
             .banner {
                 text-align: center;
@@ -34,7 +33,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                transition: opacity 0.7s ease-in-out;
+                z-index: 0;
             }
             #background-banner-video{
                 position: fixed;
@@ -43,14 +42,15 @@
                 width: 100vw;
                 height: 100vh;
                 object-fit: cover;
-                animation: fadeIn 2s forwards;
+                animation: fadeIn 2s forwards ease-in-out;
 
             }
             #banner-text {
                 position: fixed;
+                align-self: center;
                 color: white;
                 opacity: 0;
-                animation: fadeIn 2s forwards;
+                animation: fadeIn 2s forwards ease-in-out;
             }
             @keyframes fadeInFromDown {
                     from {
@@ -75,22 +75,10 @@
                     opacity: 1;
                 }
             }
-            @keyframes fadeInFromUp {
-                from {
-                    transform: translatey(-200vh);/* Endet an der normalen Position */
-                    opacity: 0;
-                    position: absolute;
-                }
-                to {
-                    transform: translateY(-100vh);/* Endet an der normalen Position */
-                    opacity: 1;
-                    position: absolute;
-                }
-            }
+
             .counter {
                 background-image: url("../images/counter.gif");
                 background-size: cover;
-                
                 min-height: 100vh;
                 text-align: center;
                 display: flex;
@@ -138,7 +126,45 @@
                 line-height: 1.8;
                 font-size: 16px;
             }
+            .overlay {
+                height: 0;
+                width: 100%;
+                position: fixed;
+                z-index: 1;
+                top: 0;
+                background-color: rgb(0,0,0);
+                background-color: rgba(0,0,0, 0.9);
+                overflow-x: hidden;
+                transition: 0.5s;
+            }
+            .overlay-content {
+                position: relative;
+                top: 25%;
+                width: 100;
 
+                text-align: center;
+                margin-top: 30px;
+            }
+
+            .overlay a {
+                padding: 8px;
+                text-decoration: none;
+                font-size: 36px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+            }
+
+            .overlay a:hover, .overlay a:focus {
+                color: #f1f1f1;
+            }
+
+            .overlay .closebtn {
+                position: absolute;
+                top: 20px;
+                right: 45px;
+                font-size: 60px;
+            }
         </style>
     </head>
     <audio id="background-audio"  > >
@@ -158,14 +184,51 @@
                 <text x="150" y="30" font-size="28" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" text-anchor="middle" fill="#b38124" font-weight="bold">Kulturinsel Moabit</text>
                 </svg>
             </div>
-            <div class="menu-icon" onclick="myFunction(this)">
+            <div class="menu-icon" onclick="toggleMenu(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </div>
         </div>
-            <script src="../js/menu-toggle.js"></script>
+
         </header>
+        <div id="myNav" class="overlay">
+            <div class="overlay-content">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+            </div>
+        </div>
+        <script>
+            let lastClickTime = 0;
+            function toggleMenu(x) {
+                let currentTime = new Date().getTime();
+                if (currentTime - lastClickTime < 1000) {
+                    console.log("Bitte warte 2 Sekunden, bevor du erneut klickst.");
+                    return; // Verhindert weiteres Klicken für 2 Sekunden
+                }
+                lastClickTime = currentTime;
+
+                x.classList.toggle("change");
+                console.log("Menü-Button aktiviert");
+
+                let myNav = document.getElementById("myNav");
+                let myNavElement = window.getComputedStyle(myNav);
+
+                setTimeout(() => {
+                    if (myNavElement.height === "0px") {
+                        console.log("Menü geöffnet");
+                        myNav.style.height = window.innerHeight + "px"; // Volle Höhe des Viewports
+                    } else {
+                        console.log("Menü geschlossen");
+                        myNav.style.height = "0px";
+                    }
+                }, 300);
+            }
+        </script>
+
+
         <div class="banner">
             <video autoplay muted loop id="background-banner-video">
                 <source src="../video/upscaled.mp4" type="video/mp4">
