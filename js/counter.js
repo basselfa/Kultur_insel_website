@@ -25,8 +25,22 @@ const countdownTimer = setInterval(function() {
 }, 1000);
 
 let lastScrollY = window.scrollY;
+let isCtrlPressed = false;
+
+window.addEventListener("keydown", function (event) {
+    if (event.ctrlKey) {
+        isCtrlPressed = true;
+    }
+});
+
+window.addEventListener("keyup", function (event) {
+    if (!event.ctrlKey) {
+        isCtrlPressed = false;
+    }
+});
 
 window.addEventListener("scroll", function () {
+    if (isCtrlPressed) return;
     const banner = document.querySelector(".banner");
     const counter = document.querySelector(".counter");
 

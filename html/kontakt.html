@@ -18,6 +18,7 @@
         body {
             overflow-x: hidden;
             width: 100vw;
+            height: 100vh;
             margin: 0;
             background-image: url('../images/buehne.jpg');
             background-size: cover;
@@ -30,7 +31,8 @@
         
         .contact-container {
             animation: fadeIn 2s forwards;
-            max-width: 80%;
+
+
             justify-self: center;
             align-self: center;
             
@@ -40,18 +42,17 @@
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
             width: 90%;
-            max-height: 90%;
         }
         
         .contact-container h1 {
             text-align: center;
             margin-bottom: 30px;
             color: #f0e6d2;
+            max-height: 90%;
         }
         
         .contact-form {
             display: flex;
-            /* gap: 20px; */
             width: 90%;
             justify-self: center;
             align-self: center; 
@@ -63,13 +64,11 @@
         }
         
         .form-group label {
-            /* margin-bottom: 5px; */
             font-weight: bold;
         }
         
         .form-group input,
         .form-group textarea {
-            /* padding: 12px; */
             border: 1px solid #333;
             border-radius: 5px;
             background-color: rgba(240, 230, 210, 0.9);
@@ -78,18 +77,15 @@
         }
         
         .form-group textarea {
-            /* min-height: 150px; */
             resize: vertical;
         }
         
         button[type="submit"] {
-            /* padding: 12px 24px; */
             background-color: #a05c5c;
             color: #f0e6d2;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            /* font-size: 16px; */
             font-weight: bold;
             transition: background-color 0.3s;
         }
@@ -99,7 +95,6 @@
         }
         
         #form-message {
-            /* margin-top: 20px; */
             padding: 15px;
             border-radius: 5px;
             display: none;
