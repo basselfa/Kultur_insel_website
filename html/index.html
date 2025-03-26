@@ -126,18 +126,19 @@
                 line-height: 1.8;
                 font-size: 16px;
             }
-            .overlay {
+            .menu {
                 height: 0;
                 width: 100%;
                 position: fixed;
                 z-index: 1;
                 top: 0;
-                background-color: rgb(0,0,0);
-                background-color: rgba(0,0,0, 0.9);
+                /* background-color: rgb(0,0,0); */
+                background-image: url("../images/menu.avif");
+                background-size: cover;
                 overflow-x: hidden;
-                transition: 0.5s;
+                transition: 0.8s;
             }
-            .overlay-content {
+            .menu-content {
                 position: relative;
                 top: 25%;
                 width: 100;
@@ -145,25 +146,14 @@
                 text-align: center;
                 margin-top: 30px;
             }
-
-            .overlay a {
+            .menu a {
+                font-family: 'Nova Square','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 padding: 8px;
                 text-decoration: none;
                 font-size: 36px;
                 color: #818181;
                 display: block;
-                transition: 0.3s;
-            }
-
-            .overlay a:hover, .overlay a:focus {
-                color: #f1f1f1;
-            }
-
-            .overlay .closebtn {
-                position: absolute;
-                top: 20px;
-                right: 45px;
-                font-size: 60px;
+                transition: 0.8s;
             }
         </style>
     </head>
@@ -192,8 +182,8 @@
         </div>
 
         </header>
-        <div id="myNav" class="overlay">
-            <div class="overlay-content">
+        <div id= "menu"  class="menu">
+            <div class="menu-content">
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Clients</a>
@@ -213,7 +203,7 @@
                 x.classList.toggle("change");
                 console.log("Menü-Button aktiviert");
 
-                let myNav = document.getElementById("myNav");
+                let myNav = document.getElementById("menu");
                 let myNavElement = window.getComputedStyle(myNav);
 
                 setTimeout(() => {
