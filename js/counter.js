@@ -39,16 +39,18 @@ window.addEventListener("keyup", function (event) {
         isCtrlPressed = false;
     }
 });
-let lastClickTime = 0;
+let lastScrollTime = 0;
 
 window.addEventListener("scroll", function () { 
 
     if (isCtrlPressed) return;
     const currentTime = new Date().getTime();
-    if (currentTime - lastClickTime < 4000) {
+    if (currentTime - lastScrollTime < 4000) {
         console.log("Bitte warte 2 Sekunden, bevor du erneut klickst.");
         return; // Verhindert weiteres Klicken für 2 Sekunden
     }
+    lastScrollTime = currentTime;
+
     const banner = document.querySelector(".banner");
     const counter = document.querySelector(".counter");
 
