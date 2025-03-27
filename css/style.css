@@ -247,7 +247,7 @@ footer {
     animation-delay: 0.8s!important;
 }
     #count-unit3 {
-    animation-delay: 1.0s !important; 
+    animation-delay: 1.0s !important; ;
 }
 #count-unit4 {
     animation-delay: 1.2s !important;
@@ -266,7 +266,8 @@ p {
     position: fixed;
     z-index: 2;
     top: 0;
-    background-image: linear-gradient(to bottom, #0c133f , #b3622c);
+    background-image: linear-gradient(to bottom ,rgba(12, 19, 63)
+    , #081812);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
