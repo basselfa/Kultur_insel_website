@@ -37,51 +37,59 @@
             }
             #background-banner-video{
                 position: fixed;
-                top: 0;
                 left: 0;
                 width: 100vw;
                 height: 100vh;
                 object-fit: cover;
                 animation: fadeIn 2s forwards ease-in-out;
-
+                z-index: 0;
             }
             #banner-text {
                 position: fixed;
                 align-self: center;
                 color: white;
-                opacity: 0;
                 animation: fadeIn 2s forwards ease-in-out;
-            }
-            @keyframes fadeInFromDown {
-                    from {
-                        transform: translatey(100vh);/* Endet an der normalen Position */
-                        opacity: 0;
-                        position: absolute;
-                    }
-                    to {
-                        transform: translateY(0vh);/* Endet an der normalen Position */
-                        opacity: 1;
-                        position: absolute;
-                    }
-                }
-            @keyframes fadeOutFromDown {
-                from {
-                    transform: translatey(0vh);/* Endet an der normalen Position */
-                    position: absolute;
-                }
-                to {
-                    transform: translateY(100vh);/* Endet an der normalen Position */
-                    position: absolute;
-                    opacity: 1;
-                }
+                z-index: 0;
             }
 
+            /* .menu {
+                height: 0;
+                width: 100%;
+                position: relative;
+                z-index: 1;
+                top: 0;
+                background-image: linear-gradient(to bottom, #0c133f, #0c133f);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                overflow-x: hidden;
+                transition: 0.7s smooth ease-in-out;
+                box-shadow: rgba(0, 0, 0, 0.6);
+                opacity: 0.995;
+            } */
+            /* .counter {
+                height: 0;
+                width: 100%;
+                position: relative;
+                z-index: 1;
+                top: 0;
+                background-image: linear-gradient(to bottom, #0c133f);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                overflow-x: hidden;
+                transition: 0.8s ;
+                box-shadow: rgba(0, 0, 0, 0.6);
+                opacity: 0.3;
+            } */
             .counter {
+                height: 0vh;
+                bottom: 0;
                 background-image: url("../images/counter.gif");
                 background-size: cover;
-                min-height: 100vh;
                 text-align: center;
                 display: flex;
+                position: fixed;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
@@ -89,10 +97,13 @@
                 width: 100%;
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
                 border-radius: 10px;
-                transition: opacity 0.7s ease-in-out;
+                transition:  0.7s ease-in-out;
                 color: white;
+                overflow-x: hidden;
+                z-index: 1;
                 box-sizing: border-box;
             }
+            
             .counter.animate {
                 animation: fadeInFromDown 1.5s ease-in-out forwards;
             }
@@ -139,7 +150,7 @@
                 overflow-x: hidden;
                 transition: 0.8s ;
                 box-shadow: rgba(0, 0, 0, 0.6);
-                opacity: 0.999;
+                opacity: 0.995;
             }
             .menu-content {
                 position: relative;
@@ -185,7 +196,7 @@
         </div>
 
         </header>
-        <div id= "menu"  class="menu">
+        <div id= "menuId"  class="menu">
             <div class="menu-content">
             <a href="#">About</a>
             <a href="#">Services</a>
@@ -197,7 +208,7 @@
             let lastClickTimeMenu = 0;
             function toggleMenu(x) {
                 let currentTime = new Date().getTime();
-                if (currentTime - lastClickTimeMenu < 1000) {
+                if (currentTime - lastClickTimeMenu < 300) {
                     console.log("Bitte warte 2 Sekunden, bevor du erneut klickst.");
                     return; // Verhindert weiteres Klicken für 2 Sekunden
                 }
@@ -206,7 +217,7 @@
                 x.classList.toggle("change");
                 console.log("Menü-Button aktiviert");
 
-                let myNav = document.getElementById("menu");
+                let myNav = document.getElementById("menuId");
                 let myNavElement = window.getComputedStyle(myNav);
 
                 setTimeout(() => {
@@ -220,8 +231,6 @@
                 }, 300);
             }
         </script>
-
-
         <div class="banner">
             <video autoplay muted loop id="background-banner-video">
                 <source src="../video/upscaled.mp4" type="video/mp4">
@@ -234,7 +243,7 @@
                 <span>24.08. - 26.08.2025</span>
             </h1>
         </div>
-        <div class="counter">
+        <div id="counterId" class="counter">
             <h1>Countdown bis zur Fete du See!</h1>
             <div id="inside-counter">
                 <div class="count-unit"><span id="days">00</span><span>TAGE</span></div>
@@ -244,6 +253,9 @@
             </div>
         </div>
         <script src="../js/counter.js"></script>
+        </div class="scrollHero">
+            <h1>Hello i am scroll hero</h1>
+        <div>
         <footer>
             <div class="footer-bar" >
                 <div style="display: flex; gap: 15px;">

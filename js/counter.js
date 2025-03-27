@@ -24,69 +24,29 @@ const countdownTimer = setInterval(function() {
     }
 }, 1000);
 
-let lastScrollY = window.scrollY;
-let isCtrlPressed = false;
+let state = "top";
+let transitioning = false;
+window.addEventListener("scroll", function () {
 
 
-window.addEventListener("keydown", function (event) {
-    if (event.ctrlKey) {
-        isCtrlPressed = true;
-    }
-});
+    let counter = document.getElementById("counterId");
+    let counterElement = window.getComputedStyle(counter);
+    console.log("Aktuelle Scrollposition:", window.scrollY);
+    console.log(" Height" + counterElement.height);
+    setTimeout(() => {
+        if (state === "top" && window.scrollY > 3) {
+            console.log("Scrolling nach unten...");
+            state = "bottom";
+                // window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+            counter.style.height = window.innerHeight + "px"; // Volle Höhe des Viewports
+        }
+        else if (state === "bottom" && window.scrollY < 10) {
+            state = "top";
+            console.log("Scrolling nach oben...");
+            counter.style.height = "0px";
 
-window.addEventListener("keyup", function (event) {
-    if (!event.ctrlKey) {
-        isCtrlPressed = false;
-    }
-});
-let lastScrollTime = 0;
-
-window.addEventListener("scroll", function () { 
-
-    if (isCtrlPressed) return;
-    const currentTime = new Date().getTime();
-    if (currentTime - lastScrollTime < 4000) {
-        console.log("Bitte warte 2 Sekunden, bevor du erneut klickst.");
-        return; // Verhindert weiteres Klicken für 2 Sekunden
-    }
-    lastScrollTime = currentTime;
-
-    const banner = document.querySelector(".banner");
-    const counter = document.querySelector(".counter");
-
-    const scrollPosition = window.scrollY;
-    const fadeSpeed = 0.02;
-
-    const isScrollingDown = scrollPosition > lastScrollY;
-    const isScrollingUp = scrollPosition < lastScrollY;
-
-    lastScrollY = scrollPosition; // Update for next scroll event
-
-    if (isScrollingDown && window.scrollY > 0  ){
-        counter.classList.remove('hide');
-
-        counter.classList.add('animate');
-        console.log('scrolling down');
-        setTimeout(() => {
-            window.scrollTo(0, document.body.scrollHeight);
-        }, 200);
-    }
-    else if ( scrollPosition!=1 && isScrollingUp && window.scrollY < document.body.scrollHeight) {
-        counter.classList.remove('animate');
-        counter.classList.add('hide');
-        setTimeout(() => {
-            window.scrollTo(1, 1);
-        }, 9000);
-        console.log('scrolling up');
-    }
-    console.log(scrollPosition);
-
-    // let bannerOpacity = 1 - scrollPosition / fadeSpeed;
-    // let counterOpacity = scrollPosition / fadeSpeed;
-
-    // bannerOpacity = Math.max(bannerOpacity, 0);
-    // counterOpacity = Math.min(counterOpacity, 1);
-
-    // banner.style.opacity = bannerOpacity;
-    // counter.style.opacity = counterOpacity;
+            //     window.scrollTo({ top:0, behavior: "smooth" });
+        }
+    }, 300);
+        
 });
