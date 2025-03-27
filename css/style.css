@@ -174,7 +174,7 @@ footer {
     height: 100vh;
     opacity: 0;
     bottom: 0;
-    background-image: url("../images/counter.gif");
+    background-image: url("../images/nightLake.jpg");
     background-size: cover;
     text-align: center;
     display: flex;
@@ -247,7 +247,7 @@ footer {
     animation-delay: 0.8s!important;
 }
     #count-unit3 {
-    animation-delay: 1.0s !important; ;
+    animation-delay: 1.0s !important; 
 }
 #count-unit4 {
     animation-delay: 1.2s !important;
@@ -266,7 +266,7 @@ p {
     position: fixed;
     z-index: 2;
     top: 0;
-    background-image: linear-gradient(to bottom, #0c133f, #0c133f);
+    background-image: linear-gradient(to bottom, #0c133f , #b3622c);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
