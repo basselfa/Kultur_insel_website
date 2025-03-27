@@ -94,21 +94,12 @@
         display: flex;
         flex-wrap: wrap;
     }
-    .fa {
-        padding: 10px;
-        font-size: 14px;
-        width: 14px;
-        height: 14px;
-    }
-    .footer-bar {
-        margin: 0.5vw !important;
-    }
+
     #inside-counter {
         display: grid !important;
         grid-template-columns: repeat(2, 1fr) !important;
         gap: 10px !important;
     }
-
     .count-unit span:first-child {
         font-size: 10vw!important;
     }
@@ -119,20 +110,21 @@
     
     .info-buttons {
         align-self: start !important;
-        margin-left: 0vw !important;
     }
     #social-media {
         align-self: end !important;
-        margin-right: 0.3vw !important;
     }
     #impressum {
         display: none;
     }
+
     footer {
         position: fixed;
     }
 
-    
+    .footer-bar {
+        margin: 0.5vw !important;
+    }
     h1 {
         font-size: 24px !important;
     }
