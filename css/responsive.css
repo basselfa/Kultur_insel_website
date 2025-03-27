@@ -55,12 +55,12 @@
     }
     #social-media {
         align-self: end !important;
-        margin-right: 10% !important;
     }
 
     .footer-bar {
-        margin: 0.5vw !important;
+        margin: 0.3vw !important;
     }
+    
     
     .event-cards {
         grid-template-columns: repeat(2, 1fr) !important;
