@@ -1,0 +1,163 @@
+/* Responsive Styles for Kulturinsel Website */
+
+/* Base responsive settings */
+* {
+    box-sizing: border-box;
+}
+
+
+/* Fix for Firefox */
+/* @-moz-document url-prefix() {
+    .fa {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+} */
+
+/* Fix for Safari */
+@media not all and (min-resolution:.001dpcm) { 
+    @supports (-webkit-appearance:none) {
+        .fa {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+    }
+}
+
+/* Fix for Edge and IE */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .fa {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        line-height: normal !important;
+    }
+}
+
+/* General responsive adjustments */
+
+
+/* Tablet styles */
+@media (max-width: 992px) {
+    /* #title-svg {
+        width: 250px;
+    } */
+    #archive {
+        transform: none !important; /* Keine Rotation */
+    }
+    
+    #music {
+        transform: none !important; /* Keine Rotation */
+    }
+    #inside-counter {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    .count-unit {
+        min-width: 100px !important;
+    }
+    .count-unit span:first-child {
+        font-size:  10vw !important;
+    }
+    
+    .count-unit span:last-child {
+        font-size: 2vw !important;
+    }
+    
+    
+    .info-buttons {
+        align-self: start !important;
+        margin-left: 0px !important;
+    }
+    #social-media {
+        align-self: end !important;
+        margin-right: 10% !important;
+    }
+
+    
+
+    
+    /* Event cards adjustments */
+    .event-cards {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+/* Mobile styles */
+
+
+/* Small mobile styles */
+@media (max-width: 730px) {
+    #background-banner-video {
+        object-position: center;
+    }
+    #archive {
+        display: none;
+    }
+    #music {
+        margin-top: auto;
+        transform: none !important; /* Keine Rotation */
+    }
+    #title-svg {
+        display: none;
+    }
+    .menu-icon {
+        margin-top: -4px;
+        align-items: right;
+    }
+    .title-bar-content {
+        margin: 0vw !important;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .fa {
+        padding: 10px;
+        font-size: 14px;
+        width: 14px;
+        height: 14px;
+    }
+    .footer-bar {
+        margin: 0.5vw !important;
+    }
+    #inside-counter {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    .count-unit span:first-child {
+        font-size: 10vw!important;
+    }
+    
+    .count-unit span:last-child {
+        font-size: 2vw!important;
+    }
+    
+    .info-buttons {
+        align-self: start !important;
+        margin-left: 0vw !important;
+    }
+    #social-media {
+        align-self: end !important;
+        margin-right: 0.3vw !important;
+    }
+    #impressum {
+        display: none;
+    }
+    footer {
+        position: fixed;
+    }
+
+    
+    h1 {
+        font-size: 24px !important;
+    }
+    
+    p {
+        font-size: 14px !important;
+    }
+}
+

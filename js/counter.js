@@ -30,7 +30,7 @@ window.addEventListener("load", function () {
     state = "top";
     let counter = document.getElementById("counterId");
     counter.style.opacity = 0;
-    // counter.classList.remove("animate");
+
     window.scrollTo(0, 0);
 });
 

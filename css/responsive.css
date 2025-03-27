@@ -6,14 +6,7 @@
 }
 
 
-/* Fix for Firefox */
-/* @-moz-document url-prefix() {
-    .fa {
-        display: inline-flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-    }
-} */
+
 
 /* Fix for Safari */
 @media not all and (min-resolution:.001dpcm) { 
@@ -41,9 +34,7 @@
 
 /* Tablet styles */
 @media (max-width: 992px) {
-    /* #title-svg {
-        width: 250px;
-    } */
+
     #archive {
         transform: none !important; /* Keine Rotation */
     }
