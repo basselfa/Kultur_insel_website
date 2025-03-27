@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
-    
+    <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript" src="../js/emailjs-config.js" defer></script>
     <style>
@@ -153,58 +153,53 @@
                 <text x="150" y="30" font-size="28" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" text-anchor="middle" fill="#b38124" font-weight="bold">Kulturinsel Moabit</text>
                 </svg>
             </div>
-            <div class="menu-icon" onclick="myFunction(this)">
+            <div class="menu-icon" onclick="toggleMenu(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </div>
         </div>
-        <script src="../js/menu-toggle.js"></script>
+        <script src="../js/menu.js"></script>
     </header>
 
         <div class="contact-container">
             <h1>Kontakt</h1>
-            
             <form id="contact-form" class="contact-form">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
                 </div>
-                
                 <div class="form-group">
                     <label for="email">E-Mail</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-                
                 <div class="form-group">
                     <label for="subject">Betreff</label>
                     <input type="text" id="subject" name="subject" required>
                 </div>
-                
                 <div class="form-group">
                     <label for="message">Nachricht</label>
                     <textarea id="message" name="message" required></textarea>
                 </div>
-                
                 <button type="submit">Nachricht senden</button>
             </form>
-            
-                <h2>Kontaktinformationen</h2>
-                <p><i class="fa fa-envelope"></i> E-Mail: info@kultur-insel.de</p>
-                <p><i class="fa fa-phone"></i> Telefon: +49 (0) 123 456789</p>
-                <p><i class="fa fa-map-marker"></i> Adresse: Kulturinsel, Am See 1, 12345 Seestadt</p>
-            </div> -->
         </div>
-
-    
+        <div id= "menuId"  class="menu">
+            <div class="menu-content">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
+            </div>
+            
     <footer>
         <div class="footer-bar">
             <div style="display: flex; gap: 15px;">
                 <button class="info-buttons" onclick="window.location.href='index.html'">Home</button>
                 <button class="info-buttons" onclick="window.location.href='kontakt.html'">Kontakt</button>
-                
+                <!-- <button class="info-buttons" onclick="window.location.href='presse.html'">Presse</button> -->
                 <button class="info-buttons" onclick="window.location.href='impressum.html'">Impressum</button>
-                
+                <!-- <button class="info-buttons" onclick="window.location.href='datenschutz.html'">Datenschutz</button> -->
             </div>
             <div id="social-media">
                 <a href="#" class="fa fa-facebook" aria-label="Facebook-Seite"></a>
