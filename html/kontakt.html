@@ -8,12 +8,16 @@
     <meta name="keywords" content="Kontakt, Kultur Insel, Fete du See, Veranstaltungen, Festival, Kultur">
     <meta name="author" content="Kultur Insel Team">
     <title>Kontakt - Kultur Insel - Fete du See</title>
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
-    <!-- EmailJS SDK -->
+    
+    <!-- Scripts -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript" src="../js/emailjs-config.js" defer></script>
+    
     <style>
         body {
             overflow-x: hidden;
@@ -56,7 +60,6 @@
             justify-items: center;
             padding: auto;
             margin: 5vb;
-
         }
         
         .form-group {
@@ -66,7 +69,6 @@
         
         .form-group label {
             font-weight: bold;
-            
         }
         
         .form-group input,
@@ -77,8 +79,6 @@
             color: #333;
             font-size: 16px;
         }
-        
-
         
         button[type="submit"] {
             background-color: #a05c5c;
@@ -113,31 +113,18 @@
         }
         
         .contact-info {
-            /* margin-top: 40px; */
             display: grid;
             gap: 20px;
         }
         
         .contact-info h2 {
-            /* margin-bottom: 15px; */
             color: #f0e6d2;
-        }
-        
-        .contact-info p {
-            /* margin: 5px 0; */
         }
         
         .contact-info i {
             margin-right: 10px;
             color: #a05c5c;
         }
-        
-        /* @media (max-width: 768px) {
-            .contact-container {
-                margin: 20px;
-                padding: 20px;
-            }
-        } */
     </style>
 </head>
 
@@ -147,10 +134,15 @@
             <div style="display: flex; gap: 20px;">
                 <button id="archive" onclick="alert('Wird demnächst implementiert')">Archiv</button>
             </div>
-                <script src="../js/music-player.js"></script>
+            <script src="../js/music-player.js"></script>
             <div>
-                <svg id="title-svg" width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="window.location.href='index.html'">
-                <text x="150" y="30" font-size="28" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" text-anchor="middle" fill="#b38124" font-weight="bold">Kulturinsel Moabit</text>
+                <svg id="title-svg" width="300" height="40" viewBox="0 0 300 40" fill="none" 
+                     xmlns="http://www.w3.org/2000/svg" onclick="window.location.href='index.html'">
+                    <text x="150" y="30" font-size="28" 
+                          font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" 
+                          text-anchor="middle" fill="#b38124" font-weight="bold">
+                        Kulturinsel Moabit
+                    </text>
                 </svg>
             </div>
             <div class="menu-icon" onclick="toggleMenu(this)">
@@ -162,48 +154,49 @@
         <script src="../js/menu.js"></script>
     </header>
 
-        <div class="contact-container">
-            <h1>Kontakt</h1>
-            <form id="contact-form" class="contact-form">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-Mail</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Betreff</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Nachricht</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit">Nachricht senden</button>
-            </form>
-        </div>
-        <div id= "menuId"  class="menu">
-            <div class="menu-content">
+    <main class="contact-container">
+        <h1>Kontakt</h1>
+        <form id="contact-form" class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject">Betreff</label>
+                <input type="text" id="subject" name="subject" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Nachricht</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit">Nachricht senden</button>
+        </form>
+    </main>
+
+    <div id="menuId" class="menu">
+        <div class="menu-content">
             <a href="#">About</a>
             <a href="#">Services</a>
             <a href="#">Clients</a>
             <a href="#">Contact</a>
-            </div>
+        </div>
+    </div>
             
     <footer>
         <div class="footer-bar">
             <div style="display: flex; gap: 15px;">
                 <button class="info-buttons" onclick="window.location.href='index.html'">Home</button>
                 <button class="info-buttons" onclick="window.location.href='kontakt.html'">Kontakt</button>
-                <!-- <button class="info-buttons" onclick="window.location.href='presse.html'">Presse</button> -->
                 <button class="info-buttons" onclick="window.location.href='impressum.html'">Impressum</button>
-                <!-- <button class="info-buttons" onclick="window.location.href='datenschutz.html'">Datenschutz</button> -->
             </div>
             <div id="social-media">
                 <a href="#" class="fa fa-facebook" aria-label="Facebook-Seite"></a>
-                <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" aria-label="Instagram-Seite"></a>
+                <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" 
+                   aria-label="Instagram-Seite"></a>
             </div>
         </div>
     </footer>
