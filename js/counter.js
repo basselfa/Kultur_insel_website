@@ -28,7 +28,6 @@ let state = "top";
 let transitioning = false;
 window.addEventListener("scroll", function () {
 
-
     let counter = document.getElementById("counterId");
     let counterElement = window.getComputedStyle(counter);
     console.log("Aktuelle Scrollposition:", window.scrollY);
@@ -37,15 +36,12 @@ window.addEventListener("scroll", function () {
         if (state === "top" && window.scrollY > 3) {
             console.log("Scrolling nach unten...");
             state = "bottom";
-                // window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
             counter.style.height = window.innerHeight + "px"; // Volle Höhe des Viewports
         }
         else if (state === "bottom" && window.scrollY < 10) {
             state = "top";
             console.log("Scrolling nach oben...");
             counter.style.height = "0px";
-
-            //     window.scrollTo({ top:0, behavior: "smooth" });
         }
     }, 300);
         
