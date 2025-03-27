@@ -42,24 +42,37 @@ let state = "top";
 
         console.log("Aktuelle Scrollposition:", window.scrollY);
         setTimeout(() => {
-        if (state === "top" && window.scrollY > 3) {
-            console.log("Scrolling nach unten...");
-            state = "bottom";
-            counter.style.opacity = 1;
+            if (state === "top" && window.scrollY > 3) {
+                console.log("Scrolling nach unten...");
+                state = "bottom";
+                counter.style.opacity = 1;
+                banner.style.opacity = 0;
 
-            for (let unit of countUnits) {
-                unit.style.animationPlayState = "running"; // Korrekt angewendet
+                for (let unit of countUnits) {
+                    unit.style.animation = "none";
+                    requestAnimationFrame(() => {
+                        requestAnimationFrame(() => {
+                            unit.style.animation = "dropDown 0.4s ease forwards";
+                        });
+                    });
+                    unit.style.animation = "none";
+                }
             }
-
-            banner.style.opacity = 0;
-        }
-        else if (state === "bottom" && window.scrollY < 10) {
-            state = "top";
-            console.log("Scrolling nach oben...");
-            counter.style.opacity = 0;
-            banner.style.opacity = 1;
-
-        }
-    }, 300);
+            else if (state === "bottom" && window.scrollY < 10) {
+                console.log("Scrolling nach oben...");
+                state = "top";
+                    for (let unit of countUnits) {
+                        requestAnimationFrame(() => {
+                            requestAnimationFrame(() => {
+                                unit.style.animation = "climbUp 0.4s ease backwards";
+                            });
+                        });
+                    }
+                setTimeout(() => {
+                    counter.style.opacity = 0;
+                    banner.style.opacity = 1;
+                }, 1000);
+            }
+        }, 300);
         
 });
