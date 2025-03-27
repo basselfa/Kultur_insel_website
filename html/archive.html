@@ -3,85 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stellenangebote - Kultur Insel</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Archiv - Kultur Insel - Fete du See">
+    <meta name="keywords" content="Archiv, Kultur Insel, Fete du See, Veranstaltungen, Festival, Kultur">
+    <meta name="author" content="Kultur Insel Team">
+    <title>Archiv - Kultur Insel - Fete du See</title>
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
+    
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+            width: 100vw;
+            height: 100vh;
             margin: 0;
-            padding: 0;
-            color: #333;
             background-image: url('../images/buehne.jpg');
             background-size: cover;
-            align-items: center;
-            background-color: rgb(14, 12, 90);
-
-        }
-
-
-        .container {
-            animation: fadeIn 2s forwards;
-            padding: 150px;
-            margin: 100px auto;
-            align-items: center;
-            margin-top: 10%;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 10px;
-            text-align: center;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: rgb(15, 10, 54);
             color: #f0e6d2;
-            width: 90%;
-            max-width: 900px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        h1 {
-            font-size: 28px;
-            margin-bottom: 20px;
+
+        .archive-container {
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 1200px;
+        }
+
+        .slideshow {
+            margin: 2rem 0;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1rem;
+            border-radius: 10px;
+        }
+
+        .slideshow h2 {
             color: #b38124;
+            text-align: center;
+            margin-bottom: 1rem;
         }
-        p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 15px;
+
+        /* Horizontal Slide */
+        .horizontal-slideshow {
+            overflow: hidden;
+            position: relative;
+            height: 400px;
         }
-        
+
+        .horizontal-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .horizontal-slide {
+            min-width: 100%;
+        }
+
+        .slide-content {
+            padding: 1rem;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 
 <body>
     <header class="title-bar">
-        <button id="archive" onclick="alert('Archiv wird demnächst implementiert')">Archiv</button>
-        <svg id="title-svg" width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="window.location.href='index.html'">
-            <text x="150" y="30" font-size="28" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" text-anchor="middle" fill="#b38124" font-weight="bold">Kulturinsel Moabit</text>
-        </svg>
-        <div class="menu-icon" onclick="myFunction(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
+        <audio id="background-audio"  > >
+            <source src="../music/music.mp3" type="audio/mp3">
+            Dein Browser unterstützt das Audio-Element nicht.
+        </audio>
+        <div class="title-bar-content">
+            <div style="display: flex; gap: 20px;">
+                <button id="music" onclick="playPauseMusic()">Music</button>
+            </div>
+            <script src="../js/music-player.js"></script>
+            <div>
+                <svg id="title-svg" width="300" height="40" viewBox="0 0 300 40" fill="none" 
+                     xmlns="http://www.w3.org/2000/svg" onclick="window.location.href='index.html'">
+                    <text x="150" y="30" font-size="28" 
+                          font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" 
+                          text-anchor="middle" fill="#b38124" font-weight="bold">
+                        Kulturinsel Moabit
+                    </text>
+                </svg>
+            </div>
+            <div class="menu-icon" onclick="toggleMenu(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
         </div>
-        <script src="../js/menu.js"></script>
     </header>
-    <div class="container">
-        
-        <h1>Aktuell keine !</h1>
 
-
-    </div>
-<footer>
-    <div class="footer-bar">
-        <div>
-            <button class="info-buttons" onclick="window.location.href='index.html'">Home</button>
-            <button class="info-buttons" onclick="window.location.href='kontakt.html'">Kontakt</button>
-            <button class="info-buttons" onclick="window.location.href='presse.html'">Presse</button>
-            <button class="info-buttons" onclick="window.location.href='impressum.html'">Impressum</button>
-            <button class="info-buttons" onclick="window.location.href='datenschutz.html'">Datenschutz</button>
-        </div>
-        <div id="social-media">
-            <a href="#" class="fa fa-facebook" aria-label="Facebook-Seite"></a>
-            <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" aria-label="Instagram-Seite"></a>
+    <div id="menuId" class="menu">
+        <div class="menu-content">
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
         </div>
     </div>
-</footer>
 
+    <main class="archive-container">
+        <div class="slideshow horizontal-slideshow">
+            <h2>Event Highlights</h2>
+            <div class="horizontal-slider" id="imageSlider">
+                <!-- Bilder werden dynamisch hier eingefügt -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-bar">
+            <div style="display: flex; gap: 15px;">
+                <button class="info-buttons" onclick="window.location.href='index.html'">Home</button>
+                <button class="info-buttons" onclick="window.location.href='kontakt.html'">Kontakt</button>
+                <button id="impressum" class="info-buttons" onclick="window.location.href='impressum.html'">Impressum</button>
+            </div>
+            <div id="social-media">
+                <a href="#" class="fa fa-facebook" aria-label="Facebook-Seite"></a>
+                <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" 
+                   aria-label="Instagram-Seite"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/menu.js"></script>
+    <script>
+        // Bildergalerie-Funktionen
+        class ImageGallery {
+            constructor() {
+                this.slider = document.getElementById('imageSlider');
+                this.currentSlide = 0;
+                this.slides = [];
+                this.imagePath = '../images/archive/';
+            }
+
+            async loadImages() {
+                try {
+                    // Simulierte Liste von Bildern (in Produktion würde dies von einem Server kommen)
+                    const images = [
+                        { file: 'lake.jpg', title: 'Seebühne', description: 'Events in einzigartiger Umgebung' },
+                        { file: 'nightLake.jpg', title: 'Abendveranstaltungen', description: 'Kultur unter dem Sternenhimmel' },
+                        { file: 'image1.jpeg', title: 'Kulturprogramm', description: 'Vielfältige Veranstaltungen' }
+                    ];
+
+                    // Bilder laden und Slides erstellen
+                    images.forEach(image => {
+                        this.createSlide(image);
+                    });
+
+                    // Slideshow starten
+                    this.initSlideshow();
+                } catch (error) {
+                    console.error('Fehler beim Laden der Bilder:', error);
+                    this.handleError();
+                }
+            }
+
+            createSlide(image) {
+                const slide = document.createElement('div');
+                slide.className = 'horizontal-slide';
+                
+                // Prüfen ob das Bild existiert
+                const img = new Image();
+                img.src = this.imagePath + image.file;
+                img.alt = image.title;
+                
+                img.onerror = () => {
+                    console.warn(`Bild ${image.file} konnte nicht geladen werden`);
+                    slide.remove();
+                };
+
+                const content = `
+                    <img src="${this.imagePath}${image.file}" alt="${image.title}">
+                    <div class="slide-content">
+                        <h3>${image.title}</h3>
+                        <p>${image.description}</p>
+                    </div>
+                `;
+
+                slide.innerHTML = content;
+                this.slider.appendChild(slide);
+                this.slides.push(slide);
+            }
+
+            handleError() {
+                const errorMessage = `
+                    <div class="horizontal-slide">
+                        <div class="slide-content">
+                            <h3>Bilder konnten nicht geladen werden</h3>
+                            <p>Bitte versuchen Sie es später erneut.</p>
+                        </div>
+                    </div>
+                `;
+                this.slider.innerHTML = errorMessage;
+            }
+
+            initSlideshow() {
+                if (this.slides.length === 0) {
+                    this.handleError();
+                    return;
+                }
+
+                setInterval(() => {
+                    this.currentSlide = (this.currentSlide + 1) % this.slides.length;
+                    this.slider.style.transform = `translateX(-${this.currentSlide * 100}%)`;
+                }, 3000);
+            }
+        }
+
+        // Galerie initialisieren
+        document.addEventListener('DOMContentLoaded', () => {
+            const gallery = new ImageGallery();
+            gallery.loadImages();
+        });
+    </script>
 </body>
 </html>
