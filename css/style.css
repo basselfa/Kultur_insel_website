@@ -11,7 +11,7 @@
 
 header {
     position: fixed;
-    z-index: 2;
+    z-index: 3;
     top: 0;
     width: 100vw;
     background-image: linear-gradient(to bottom, #000000, transparent);
@@ -78,7 +78,7 @@ transform: translate(0, -11px) rotate(45deg);
 footer {
     position: fixed;
     background-image: linear-gradient(to top, #000000, transparent);
-    z-index: 2;
+    z-index: 3;
     width: 100vw;
     bottom: 0;
     padding: 2.5vw;

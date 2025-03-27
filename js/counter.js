@@ -24,24 +24,41 @@ const countdownTimer = setInterval(function() {
     }
 }, 1000);
 
-let state = "top";
-let transitioning = false;
-window.addEventListener("scroll", function () {
 
+window.addEventListener("load", function () {
+    window.scrollTo(0, 0);
+    state = "top";
     let counter = document.getElementById("counterId");
-    let counterElement = window.getComputedStyle(counter);
-    console.log("Aktuelle Scrollposition:", window.scrollY);
-    console.log(" Height" + counterElement.height);
-    setTimeout(() => {
+    counter.style.opacity = 0;
+    // counter.classList.remove("animate");
+    window.scrollTo(0, 0);
+});
+
+let state = "top";
+    window.addEventListener("scroll", function () {
+        let counter = document.getElementById("counterId");
+        let banner = document.getElementById("background-banner-video");
+        let countUnits = document.getElementsByClassName("count-unit");
+
+        console.log("Aktuelle Scrollposition:", window.scrollY);
+        setTimeout(() => {
         if (state === "top" && window.scrollY > 3) {
             console.log("Scrolling nach unten...");
             state = "bottom";
-            counter.style.height = window.innerHeight + "px"; // Volle Höhe des Viewports
+            counter.style.opacity = 1;
+
+            for (let unit of countUnits) {
+                unit.style.animationPlayState = "running"; // Korrekt angewendet
+            }
+
+            banner.style.opacity = 0;
         }
         else if (state === "bottom" && window.scrollY < 10) {
             state = "top";
             console.log("Scrolling nach oben...");
-            counter.style.height = "0px";
+            counter.style.opacity = 0;
+            banner.style.opacity = 1;
+
         }
     }, 300);
         

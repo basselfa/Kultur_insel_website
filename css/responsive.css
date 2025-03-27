@@ -44,6 +44,10 @@
     /* #title-svg {
         width: 250px;
     } */
+    #archive {
+        transform: none !important; /* Keine Rotation */
+    }
+    
     #music {
         transform: none !important; /* Keine Rotation */
     }

@@ -36,6 +36,7 @@
                 z-index: 0;
             }
             #background-banner-video{
+                opacity: 0;
                 position: fixed;
                 left: 0;
                 width: 100vw;
@@ -53,7 +54,8 @@
             }
 
             .counter {
-                height: 0vh;
+                height: 100vh;
+                opacity: 0;
                 bottom: 0;
                 background-image: url("../images/counter.gif");
                 background-size: cover;
@@ -66,11 +68,36 @@
                 width: 100%;
                 box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
                 border-radius: 10px;
-                transition:  1.2s ease-in 0.13s;
+                transition:  1.2s ease-in 0.05s;
                 color: white;
                 overflow-x: hidden;
                 z-index: 1;
                 box-sizing: border-box;
+
+            }
+            @keyframes dropDown {
+                from {
+                    transform: translateY(-20vh);
+                    opacity: 0;
+                    filter: blur(30px);
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                    filter: blur(0);
+                }
+            }
+            @keyframes climbUp {
+                from {
+                    transform: translateY(20vh);
+                    opacity: 0;
+                    filter: blur(30px);
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                    filter: blur(0);
+                }
             }
             #inside-counter {
                 display: flex;
@@ -81,6 +108,7 @@
                 margin: 10px;
                 padding: 15px;
                 min-width: 120px;
+                opacity: 0;
             }
             .count-unit span:first-child {
                 display: block;
@@ -90,7 +118,34 @@
             .count-unit span:last-child {
                 font-size: 2vw;
                 font-weight: 600;
-                }
+            }
+            .animate, #counterId h1 {
+                opacity: 0;
+                animation: climbUp 1s ease forwards;
+                animation-play-state: paused ;
+
+                animation-delay: 1s;
+            }
+            .animate, #count-unit1 {
+                animation: dropDown 1s ease forwards;
+                animation-delay: 1.6s;
+                animation-play-state: paused ;
+            }
+            .animate, #count-unit2 {
+                animation: dropDown 1s ease forwards;
+                animation-delay: 1.8s;
+                animation-play-state: paused ;
+            }
+            .animate, #count-unit3 {
+                animation: dropDown 1s ease forwards;
+                animation-delay: 2s;
+                animation-play-state: paused ;
+            }
+            .animate, #count-unit4 {
+                animation: dropDown 1s ease forwards;
+                animation-delay: 2.2s;
+                animation-play-state: paused ;
+            }
             p {
                 margin: 20px auto;
                 max-width: 900px;
@@ -103,7 +158,7 @@
                 height: 0;
                 width: 100%;
                 position: fixed;
-                z-index: 1;
+                z-index: 2;
                 top: 0;
                 background-image: linear-gradient(to bottom, #0c133f, #0c133f);
                 background-size: cover;
@@ -206,12 +261,12 @@
             </h1>
         </div>
         <div id="counterId" class="counter">
-            <h1>Countdown bis zur Fete du See!</h1>
+            <h1 class="count-unit" >Countdown bis zur Fete du See!</h1>
             <div id="inside-counter">
-                <div class="count-unit"><span id="days">00</span><span>TAGE</span></div>
-                <div class="count-unit"><span id="hours">00</span><span>STUNDEN</span></div>
-                <div class="count-unit"><span id="minutes">00</span><span>MINUTEN</span></div>
-                <div class="count-unit"><span id="seconds">00</span><span>SEKUNDEN</span></div>
+                <div id="count-unit1" class="count-unit" ><span id="days">00</span><span>TAGE</span></div>
+                <div id="count-unit2" class="count-unit"><span id="hours">00</span><span>STUNDEN</span></div>
+                <div id="count-unit3" class="count-unit"><span id="minutes">00</span><span>MINUTEN</span></div>
+                <div id="count-unit4" class="count-unit"><span id="seconds">00</span><span>SEKUNDEN</span></div>
             </div>
         </div>
         <script src="../js/counter.js"></script>
