@@ -42,7 +42,7 @@ let state = "top";
 
         setTimeout(() => {
             if (state === "top" && window.scrollY > 3) {
-                console.log("Scrolling down...");
+                console.log("Scrolling nach unten...");
                 state = "bottom";
                 counter.style.opacity = 1;
                 banner.style.opacity = 0;
@@ -58,7 +58,7 @@ let state = "top";
                 }
             }
             else if (state === "bottom" && window.scrollY < 10) {
-                console.log("Scrolling up...");
+                console.log("Scrolling nach oben...");
                 state = "top";
                     for (let unit of countUnits) {
                         requestAnimationFrame(() => {

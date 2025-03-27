@@ -6,6 +6,7 @@ menuToggle.addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
+// Close menu when clicking outside
 document.addEventListener('click', (e) => {
     if (!navMenu.contains(e.target) && e.target !== menuToggle) {
         navMenu.classList.remove('active');

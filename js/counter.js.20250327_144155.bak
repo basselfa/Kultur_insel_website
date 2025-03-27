@@ -3,9 +3,10 @@ const zielDatum = new Date("August 30, 2025 00:00:00").getTime();
 
 
 const countdownTimer = setInterval(function() {
-    const jetzt = new Date().getTime();
-    const zeitDifferenz = zielDatum - jetzt;
 
+    const jetzt = new Date().getTime();
+    
+    const zeitDifferenz = zielDatum - jetzt;
 
     const tage = Math.floor(zeitDifferenz / (1000 * 60 * 60 * 24));
     const stunden = Math.floor((zeitDifferenz % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -39,10 +40,10 @@ let state = "top";
         let banner = document.getElementById("background-banner-video");
         let countUnits = document.getElementsByClassName("count-unit");
 
-
+        console.log("Aktuelle Scrollposition:", window.scrollY);
         setTimeout(() => {
             if (state === "top" && window.scrollY > 3) {
-                console.log("Scrolling down...");
+                console.log("Scrolling nach unten...");
                 state = "bottom";
                 counter.style.opacity = 1;
                 banner.style.opacity = 0;
@@ -58,7 +59,7 @@ let state = "top";
                 }
             }
             else if (state === "bottom" && window.scrollY < 10) {
-                console.log("Scrolling up...");
+                console.log("Scrolling nach oben...");
                 state = "top";
                     for (let unit of countUnits) {
                         requestAnimationFrame(() => {

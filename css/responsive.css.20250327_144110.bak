@@ -1,7 +1,14 @@
+/* Responsive Styles for Kulturinsel Website */
+
+/* Base responsive settings */
 * {
     box-sizing: border-box;
 }
 
+
+
+
+/* Fix for Safari */
 @media not all and (min-resolution:.001dpcm) { 
     @supports (-webkit-appearance:none) {
         .fa {
@@ -12,6 +19,7 @@
     }
 }
 
+/* Fix for Edge and IE */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
     .fa {
         display: inline-flex !important;
@@ -21,16 +29,18 @@
     }
 }
 
+/* General responsive adjustments */
 
 
+/* Tablet styles */
 @media (max-width: 992px) {
 
     #archive {
-        transform: none !important;
+        transform: none !important; /* Keine Rotation */
     }
     
     #music {
-        transform: none !important;
+        transform: none !important; /* Keine Rotation */
     }
     #inside-counter {
         display: grid !important;
@@ -61,11 +71,16 @@
     
 
     
+    /* Event cards adjustments */
     .event-cards {
         grid-template-columns: repeat(2, 1fr) !important;
     }
 }
 
+/* Mobile styles */
+
+
+/* Small mobile styles */
 @media (max-width: 730px) {
     #background-banner-video {
         object-position: center;
@@ -75,7 +90,7 @@
     }
     #music {
         margin-top: auto;
-        transform: none !important;
+        transform: none !important; /* Keine Rotation */
     }
     #title-svg {
         display: none;

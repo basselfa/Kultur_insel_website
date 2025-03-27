@@ -58,7 +58,7 @@ let state = "top";
                 }
             }
             else if (state === "bottom" && window.scrollY < 10) {
-                console.log("Scrolling up...");
+                console.log("Scrolling nach oben...");
                 state = "top";
                     for (let unit of countUnits) {
                         requestAnimationFrame(() => {

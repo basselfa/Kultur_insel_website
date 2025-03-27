@@ -75,7 +75,7 @@
     }
     #music {
         margin-top: auto;
-        transform: none !important;
+        transform: none !important; /* Keine Rotation */
     }
     #title-svg {
         display: none;
