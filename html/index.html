@@ -7,10 +7,14 @@
         <meta name="keywords" content="Kultur Insel, Fete du See, Veranstaltungen, Festival, Kultur">
         <meta name="author" content="Kultur Insel Team">
         <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1">
+        
         <title>Kultur Insel - Fete du See</title>
+        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/responsive.css">
+
+
         <style>
             body {
                 width: 100%;
@@ -24,14 +28,15 @@
             body::-webkit-scrollbar {
                 display: none;
             }
-
         </style>
+
     </head>
-    <audio id="background-audio"  > >
-        <source src="../music/music.mp3" type="audio/mp3">
-        Dein Browser unterstützt das Audio-Element nicht.
-    </audio>
+
     <body>
+        <audio id="background-audio"  > >
+            <source src="../music/music.mp3" type="audio/mp3">
+            Dein Browser unterstützt das Audio-Element nicht.
+        </audio>
         <header class="title-bar">
         <div class="title-bar-content">
             <div style="display: flex; gap: 20px;">
@@ -39,19 +44,21 @@
                 <button id="music" onclick="playPauseMusic()">Music</button>
             </div>
                 <script src="../js/music-player.js"></script>
+
             <div>
                 <svg id="title-svg" width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="window.location.href='index.html'">
                 <text x="150" y="30" font-size="28" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" text-anchor="middle" fill="#b38124" font-weight="bold">Kulturinsel Moabit</text>
                 </svg>
             </div>
+
             <div class="menu-icon" onclick="toggleMenu(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </div>
         </div>
-
         </header>
+
         <div id= "menuId"  class="menu">
             <div class="menu-content">
             <a href="#">About</a>
@@ -61,6 +68,7 @@
             </div>
         </div>
         <script src="../js/menu.js"></script>
+
         <div class="banner">
             <video autoplay muted loop id="background-banner-video">
                 <source src="../video/upscaled.mp4" type="video/mp4">
@@ -73,6 +81,7 @@
                 <span>29.08. - 30.08.2025</span>
             </h1>
         </div>
+
         <div id="counterId" class="counter">
             <h1 class="count-unit" >Countdown bis zur Fete du See!</h1>
             <div id="inside-counter">
@@ -83,9 +92,11 @@
             </div>
         </div>
         <script src="../js/counter.js"></script>
+
         </div class="scrollHero">
             <h1>Hello i am scroll hero</h1>
         <div>
+            
         <footer>
             <div class="footer-bar" >
                 <div style="display: flex; gap: 15px;">
