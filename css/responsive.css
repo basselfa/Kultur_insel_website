@@ -58,12 +58,17 @@
         margin-right: 10% !important;
     }
 
-    
-
+    .footer-bar {
+        margin: 0.5vw !important;
+    }
     
     .event-cards {
         grid-template-columns: repeat(2, 1fr) !important;
     }
+    footer {
+        position: fixed;
+    }
+
 }
 
 @media (max-width: 730px) {
