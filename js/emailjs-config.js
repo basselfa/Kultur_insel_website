@@ -17,18 +17,12 @@
                 submitButton.disabled = true;
                 
                 // Get form data
-                const name = document.getElementById('name').value;
-                const email = document.getElementById('email').value;
-                const subject = document.getElementById('subject').value;
-                const message = document.getElementById('message').value;
-                
-                // Prepare template parameters
                 const templateParams = {
-                    from_name: name,
-                    from_email: email,
+                    from_name: document.getElementById('name').value,
+                    from_email: document.getElementById('email').value,
                     to_email: 'ba.f.prosoft@gmail.com',
-                    subject: subject,
-                    message: message
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
                 };
                 
                 // Send email using EmailJS

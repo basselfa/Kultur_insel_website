@@ -1,11 +1,8 @@
-
 const zielDatum = new Date("August 30, 2025 00:00:00").getTime();
-
 
 const countdownTimer = setInterval(function() {
     const jetzt = new Date().getTime();
     const zeitDifferenz = zielDatum - jetzt;
-
 
     const tage = Math.floor(zeitDifferenz / (1000 * 60 * 60 * 24));
     const stunden = Math.floor((zeitDifferenz % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -23,55 +20,45 @@ const countdownTimer = setInterval(function() {
     }
 }, 1000);
 
-
-window.addEventListener("load", function () {
+window.addEventListener("load", function() {
     window.scrollTo(0, 0);
     state = "top";
-    let counter = document.getElementById("counterId");
-    counter.style.opacity = 0;
-
-    window.scrollTo(0, 0);
+    document.getElementById("counterId").style.opacity = 0;
 });
 
 let state = "top";
-    window.addEventListener("scroll", function () {
-        let counter = document.getElementById("counterId");
-        let banner = document.getElementById("background-banner-video");
-        let countUnits = document.getElementsByClassName("count-unit");
+window.addEventListener("scroll", function() {
+    let counter = document.getElementById("counterId");
+    let banner = document.getElementById("background-banner-video");
+    let countUnits = document.getElementsByClassName("count-unit");
 
+    setTimeout(() => {
+        if (state === "top" && window.scrollY > 3) {
+            state = "bottom";
+            counter.style.opacity = 1;
+            banner.style.opacity = 0;
 
-        setTimeout(() => {
-            if (state === "top" && window.scrollY > 3) {
-                console.log("Scrolling down...");
-                state = "bottom";
-                counter.style.opacity = 1;
-                banner.style.opacity = 0;
-
-                for (let unit of countUnits) {
-                    unit.style.animation = "none";
+            for (let unit of countUnits) {
+                unit.style.animation = "none";
+                requestAnimationFrame(() => {
                     requestAnimationFrame(() => {
-                        requestAnimationFrame(() => {
-                            unit.style.animation = "dropDown 0.4s ease forwards";
-                        });
+                        unit.style.animation = "dropDown 0.4s ease forwards";
                     });
-                    unit.style.animation = "none";
-                }
+                });
             }
-            else if (state === "bottom" && window.scrollY < 10) {
-                console.log("Scrolling up...");
-                state = "top";
-                    for (let unit of countUnits) {
-                        requestAnimationFrame(() => {
-                            requestAnimationFrame(() => {
-                                unit.style.animation = "climbUp 0.4s ease backwards";
-                            });
-                        });
-                    }
-                setTimeout(() => {
-                    counter.style.opacity = 0;
-                    banner.style.opacity = 1;
-                }, 1000);
+        } else if (state === "bottom" && window.scrollY < 10) {
+            state = "top";
+            for (let unit of countUnits) {
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
+                        unit.style.animation = "climbUp 0.4s ease backwards";
+                    });
+                });
             }
-        }, 300);
-        
+            setTimeout(() => {
+                counter.style.opacity = 0;
+                banner.style.opacity = 1;
+            }, 1000);
+        }
+    }, 300);
 });
