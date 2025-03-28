@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="../css/style.css">
         <link rel="stylesheet" href="../css/responsive.css">
-
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
         <style>
             body {
@@ -37,26 +37,27 @@
             <source src="../music/music.mp3" type="audio/mp3">
             Dein Browser unterstützt das Audio-Element nicht.
         </audio>
+       
         <header class="title-bar">
-        <div class="title-bar-content">
-            <div style="display: flex; gap: 20px;">
-                <button id="archive" onclick="window.location.href='archive.html'">Archiv</button>
-                <button id="music" onclick="playPauseMusic()">Music</button>
-            </div>
+            <div class="title-bar-content">
+                <div style="display: flex; gap: 20px;">
+                    <button id="archive" onclick="window.location.href='archive.html'">Archiv</button>
+                    <button id="music" onclick="playPauseMusic()">Music</button>
+                </div>
                 <script src="../js/music-player.js"></script>
 
-            <div>
-                <svg id="title-svg" width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="window.location.href='index.html'">
-                <text x="150" y="30" font-size="28" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" text-anchor="middle" fill="#b38124" font-weight="bold">Kulturinsel Moabit</text>
-                </svg>
-            </div>
+                <div>
+                    <svg id="title-svg" width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="window.location.href='index.html'">
+                    <text x="150" y="30" font-size="28" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" text-anchor="middle" fill="#b38124" font-weight="bold">Kulturinsel Moabit</text>
+                    </svg>
+                </div>
 
-            <div class="menu-icon" onclick="toggleMenu(this)">
-                <div class="bar1"></div>
-                <div class="bar2"></div>
-                <div class="bar3"></div>
+                <div class="menu-icon" onclick="toggleMenu(this)">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
             </div>
-        </div>
         </header>
 
         <div id= "menuId"  class="menu">
@@ -76,6 +77,7 @@
                 <track src="upscaled-description.vtt" kind="descriptions" srclang="de" label="Deutsch">
                 Dein Browser unterstützt kein HTML5-Video.
             </video>
+
             <h1 id="banner-text">
                 <span style="display: block;">FETE DU SEE FESTIVAL</span> 
                 <span>29.08. - 30.08.2025</span>
@@ -84,6 +86,7 @@
 
         <div id="counterId" class="counter">
             <h1 class="count-unit" >Countdown bis zur Fete du See!</h1>
+
             <div id="inside-counter">
                 <div id="count-unit1" class="count-unit" ><span id="days">00</span><span>TAGE</span></div>
                 <div id="count-unit2" class="count-unit"><span id="hours">00</span><span>STUNDEN</span></div>
@@ -102,10 +105,9 @@
                 <div style="display: flex; gap: 15px;">
                     <button class="info-buttons"  onclick="window.location.href='jobs.html'">Jobs</button>
                     <button class="info-buttons" onclick="window.location.href='kontakt.html'">Kontakt</button>
-                    
                     <button class="info-buttons" id="impressum" onclick="window.location.href='impressum.html'">Impressum</button>
-                    
                 </div>
+                
                 <div id="social-media">
                     <a href="#" class="fa fa-facebook" aria-label="Facebook-Seite"></a>
                     <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" aria-label="Instagram-Seite"></a>

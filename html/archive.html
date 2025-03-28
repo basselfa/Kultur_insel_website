@@ -85,11 +85,13 @@
             <source src="../music/music.mp3" type="audio/mp3">
             Dein Browser unterstützt das Audio-Element nicht.
         </audio>
+        
         <div class="title-bar-content">
             <div style="display: flex; gap: 20px;">
                 <button id="music" onclick="playPauseMusic()">Music</button>
             </div>
             <script src="../js/music-player.js"></script>
+
             <div>
                 <svg id="title-svg" width="300" height="40" viewBox="0 0 300 40" fill="none" 
                      xmlns="http://www.w3.org/2000/svg" onclick="window.location.href='index.html'">
@@ -100,6 +102,7 @@
                     </text>
                 </svg>
             </div>
+
             <div class="menu-icon" onclick="toggleMenu(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
@@ -120,8 +123,12 @@
     <main class="archive-container">
         <div class="slideshow horizontal-slideshow">
             <h2>Event Highlights</h2>
-            <div class="horizontal-slider" id="imageSlider">
+            <div class="horizontal-slider" id="imageSlider" role="region" aria-label="Bildergalerie">
                 <!-- Bilder werden dynamisch hier eingefügt -->
+            </div>
+            <div class="slideshow-controls">
+                <button class="nav-button prev" aria-label="Vorheriges Bild">&#10094;</button>
+                <button class="nav-button next" aria-label="Nächstes Bild">&#10095;</button>
             </div>
         </div>
     </main>
