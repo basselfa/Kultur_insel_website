@@ -45,13 +45,13 @@ header {
     background-color: rgba(36, 15, 15, 0.9);
 }
 
-#title-svg {
+#title-canvas {
     margin: 0 auto;
     margin-left: -10vw;
     align-items: center;
 }
 
-#title-svg:hover {
+#title-canvas:hover {
     opacity: 0.8;
     transform: scale(1.0);
     cursor: pointer;
