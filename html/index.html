@@ -2,12 +2,16 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Kultur Insel - Fete du See - Kulturveranstaltungen am See">
-    <meta name="keywords" content="Kultur Insel, Fete du See, Veranstaltungen, Festival, Kultur">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">ello
+    <meta name="description" content="Kultur Insel - Fête du See - Kulturveranstaltungen am See">
+    <meta name="keywords" content="Kultur Insel, Fête du See, Veranstaltungen, Festival, Kultur">
     <meta name="author" content="Kultur Insel Team">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1">
-    <title>Kultur Insel - Fete du See</title>
+    <!-- ARIA-Landmark für die Hauptsprache -->
+    <meta name="language" content="de">
+
+    <title>Kultur Insel - Fête du See</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
@@ -29,17 +33,21 @@
 </head>
 
 <body>
-    <audio id="background-audio">
+    <!-- Audio-Player mit besserer Beschreibung -->
+    <audio id="background-audio" aria-label="Hintergrundmusik">
         <source src="../music/music.mp3" type="audio/mp3">
-        Dein Browser unterstützt das Audio-Element nicht.
+        <p>Dein Browser unterstützt das Audio-Element nicht. Die Hintergrundmusik kann nicht abgespielt werden.</p>
     </audio>
    
-    <header class="title-bar">
+    <!-- Header mit Navigation-Landmark -->
+    <header class="title-bar" role="banner">
         <div class="title-bar-content">
-            <div style="display: flex; gap: 20px;">
-                <button id="archive" onclick="window.location.href='archive.html'">Archiv</button>
-                <button id="music" onclick="playPauseMusic()">Music</button>
-            </div>
+            <nav role="navigation" aria-label="Hauptnavigation">
+                <div style="display: flex; gap: 20px;">
+                    <button id="archive" onclick="window.location.href='archive.html'" aria-label="Zum Archiv">Archiv</button>
+                    <button id="music" onclick="playPauseMusic()" aria-label="Musik abspielen oder pausieren">Music</button>
+                </div>
+            </nav>
             <div>
                 <svg id="title-svg" width="300" height="40" viewBox="0 0 300 40" fill="none" xmlns="http://www.w3.org/2000/svg" onclick="window.location.href='index.html'">
                     <text x="150" y="30" font-size="28" font-family="'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" text-anchor="middle" fill="#b38124" font-weight="bold">Kulturinsel Moabit</text>
@@ -53,50 +61,58 @@
         </div>
     </header>
 
-    <div id="menuId" class="menu">
+    <!-- Verbesserte Menüstruktur -->
+    <nav id="menuId" class="menu" role="navigation" aria-label="Hauptmenü">
         <div class="menu-content">
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Clients</a>
-            <a href="#">Contact</a>
+            <a href="#" role="menuitem">About</a>
+            <a href="#" role="menuitem">Services</a>
+            <a href="#" role="menuitem">Clients</a>
+            <a href="#" role="menuitem">Contact</a>
         </div>
-    </div>
-    <div class="banner">
-        <video autoplay muted loop id="background-banner-video">
-            <source src="../video/upscaled.mp4" type="video/mp4">
-            <track src="upscaled-subtitles.vtt" kind="subtitles" srclang="de" label="Deutsch">
-            <track src="upscaled-description.vtt" kind="descriptions" srclang="de" label="Deutsch">
-            Dein Browser unterstützt kein HTML5-Video.
-        </video>
-        <h1 id="banner-text">
-            <span style="display: block;">FETE DU SEE FESTIVAL</span> 
-            <span>29.08. - 30.08.2025</span>
-        </h1>
-    </div>
+    </nav>
 
-    <div id="counterId" class="counter">
-        <h1 class="count-unit">Countdown bis zur Fete du See!</h1>
-        <div id="inside-counter">
-            <div id="count-unit1" class="count-unit"><span id="days">00</span><span>TAGE</span></div>
-            <div id="count-unit2" class="count-unit"><span id="hours">00</span><span>STUNDEN</span></div>
-            <div id="count-unit3" class="count-unit"><span id="minutes">00</span><span>MINUTEN</span></div>
-            <div id="count-unit4" class="count-unit"><span id="seconds">00</span><span>SEKUNDEN</span></div>
+    <!-- Hauptinhalt mit main-Landmark -->
+    <main>
+        <div class="banner" role="banner">
+            <video autoplay muted loop id="background-banner-video" aria-label="Hintergrundvideo des Festivals">
+                <source src="../video/upscaled.mp4" type="video/mp4">
+                <track src="upscaled-subtitles.vtt" kind="subtitles" srclang="de" label="Deutsch">
+                <track src="upscaled-description.vtt" kind="descriptions" srclang="de" label="Deutsch">
+                <p>Dein Browser unterstützt kein HTML5-Video. Das Video zeigt Impressionen vom Festival.</p>
+            </video>
+            <h1 id="banner-text" aria-label="Festival Datum">
+                <span style="display: block;">Fête du See FESTIVAL</span> 
+                <span>29.08. - 30.08.2025</span>
+            </h1>
         </div>
-    </div>
-    <div class="scrollHero">
-        <h1>Hello i am scroll hero</h1>
-    </div>
-        
-    <footer>
-        <div class="footer-bar">
-            <div style="display: flex; gap: 15px;">
-                <button class="info-buttons" onclick="window.location.href='jobs.html'">Jobs</button>
-                <button class="info-buttons" onclick="window.location.href='kontakt.html'">Kontakt</button>
-                <button class="info-buttons" id="impressum" onclick="window.location.href='impressum.html'">Impressum</button>
+
+        <section id="counterId" class="counter" aria-label="Festival Countdown">
+            <h2 class="count-unit">Countdown bis zur Fête du See!</h2>
+            <div id="inside-counter">
+                <div id="count-unit1" class="count-unit" aria-live="polite"><span id="days">00</span><span>TAGE</span></div>
+                <div id="count-unit2" class="count-unit" aria-live="polite"><span id="hours">00</span><span>STUNDEN</span></div>
+                <div id="count-unit3" class="count-unit" aria-live="polite"><span id="minutes">00</span><span>MINUTEN</span></div>
+                <div id="count-unit4" class="count-unit" aria-live="polite"><span id="seconds">00</span><span>SEKUNDEN</span></div>
             </div>
-            <div id="social-media">
-                <a href="#" class="fa fa-facebook" aria-label="Facebook-Seite"></a>
-                <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" aria-label="Instagram-Seite"></a>
+        </section>
+
+        <section class="scrollHero" aria-label="Scroll Bereich">
+            <h2>Hello i am scroll hero</h2>
+        </section>
+    </main>
+        
+    <footer role="contentinfo">
+        <div class="footer-bar">
+            <nav aria-label="Footer Navigation">
+                <div style="display: flex; gap: 15px;">
+                    <button class="info-buttons" onclick="window.location.href='jobs.html'" aria-label="Zu den Jobs">Jobs</button>
+                    <button class="info-buttons" onclick="window.location.href='kontakt.html'" aria-label="Zum Kontakt">Kontakt</button>
+                    <button class="info-buttons" id="impressum" onclick="window.location.href='impressum.html'" aria-label="Zum Impressum">Impressum</button>
+                </div>
+            </nav>
+            <div id="social-media" aria-label="Social Media Links">
+                <a href="#" class="fa fa-facebook" aria-label="Besuchen Sie uns auf Facebook"></a>
+                <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" aria-label="Besuchen Sie uns auf Instagram"></a>
             </div>
         </div>
     </footer>
