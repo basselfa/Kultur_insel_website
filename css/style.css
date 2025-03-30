@@ -121,7 +121,7 @@ header {
 
 #archive:hover, #music:hover, .info-buttons:hover {
     opacity: 0.8;
-    transform: translateY(-2px);
+    transform: rotate(-5deg);
     background-color: rgba(36, 15, 15, 0.9);
 }
 
