@@ -57,14 +57,12 @@
     <!-- Header mit Navigation-Landmark -->
     <header class="title-bar" role="banner">
         <div class="title-bar-content">
-            <nav role="navigation" aria-label="Hauptnavigation">
-                <div style="display: flex; gap: 20px;">
-                    <button id="archive" onclick="window.location.href='archive.html'" aria-label="Zum Archiv">Archiv</button>
-                    <button id="music" onclick="playPauseMusic()" aria-label="Musik abspielen oder pausieren">Music</button>
-                </div>
-            </nav>
+            <div style="display: flex; gap: 20px;">
+                <button id="archive" onclick="window.location.href='archive.html'" aria-label="Zum Archiv">Archiv</button>
+                <button id="music" onclick="playPauseMusic()" aria-label="Musik abspielen oder pausieren">Music</button>
+            </div>
             <div>
-                <canvas id="title-canvas" width="400" height="60" aria-label="Kulturinsel Moabit" role="img"></canvas>
+                <canvas id="title-canvas" width="400" height="40" aria-label="Kulturinsel Moabit" role="img"></canvas>
             </div>
             <div class="menu-icon" onclick="toggleMenu(this)" role="button" tabindex="0" aria-label="Menü öffnen">
                 <div class="bar1"></div>

@@ -62,12 +62,12 @@
     <header class="title-bar">
         <div class="title-bar-content">
             <div style="display: flex; gap: 20px;">
-                <button id="archive" onclick="alert('Wird demnächst implementiert')">Archiv</button>
+                <button id="archive" onclick="window.location.href='archive.html'" aria-label="Zum Archiv">Archiv</button>
             </div>
             <script src="../js/music-player.js"></script>
 
             <div>
-                <canvas id="title-canvas" width="400" height="60" aria-label="Kulturinsel Moabit" role="img"></canvas>
+                <canvas id="title-canvas" width="400" height="40" aria-label="Kulturinsel Moabit" role="img"></canvas>
             </div>
             
             <div class="menu-icon" onclick="toggleMenu(this)">

@@ -10,7 +10,7 @@ class TitleAnimation {
 
         // Setze die Canvas-Größe
         this.canvas.width = 400;
-        this.canvas.height = 60;
+        this.canvas.height = 40;
 
         // Event Listener für Mausinteraktion
         this.canvas.addEventListener('mousemove', (e) => {
