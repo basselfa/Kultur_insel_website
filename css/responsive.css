@@ -88,6 +88,10 @@
         display: none;
     }
 
+    #archive:hover,#music:hover {
+        transform: rotate(-0deg) !important;
+    }
+
     .menu-icon {
         margin-top: -4px;
         align-items: right;
