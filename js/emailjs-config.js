@@ -20,7 +20,7 @@
                 const templateParams = {
                     from_name: document.getElementById('name').value,
                     from_email: document.getElementById('email').value,
-                    to_email: 'ba.f.prosoft@gmail.com',
+                    to_email: 'kulturinselmoabit@gmail.com',
                     subject: document.getElementById('subject').value,
                     message: document.getElementById('message').value
                 };
