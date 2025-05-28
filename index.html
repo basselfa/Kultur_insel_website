@@ -1,11 +1,118 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=html/">
-  <title>Weiterleitung zur Kulturinsel Moabit</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Kultur Insel - Fête du Seeee - Kulturveranstaltungen am Seeee">
+    <meta name="keywords" content="Kultur Insel, Fête du Seeee, Veranstaltungen, Festival, Kultur">
+    <meta name="author" content="Kultur Insel Team">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1">
+    <meta name="language" content="de">
+    <title>Kultur Insel - Fête du Seeee 3</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: rgb(15, 10, 54);
+        }
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        .animate, #counterId h1 { animation-delay: 0.4s !important; }
+        .animate, #count-unit1 { animation-delay: 0.6s !important; }
+        .animate, #count-unit2 { animation-delay: 0.8s!important; }
+        .animate, #count-unit3 { animation-delay: 1.0s !important; }
+        .animate, #count-unit4 { animation-delay: 1.2s !important; }
+    </style>
 </head>
+
 <body>
-  <p>Falls Sie nicht automatisch weitergeleitet werden, klicken Sie bitte <a href="html/">hier</a>.</p>
+    <audio id="background-audio" aria-label="Hintergrundmusik">
+        <source src="music/music.mp3" type="audio/mp3">
+        <p>Dein Browser unterstützt das Audio-Element nicht. Die Hintergrundmusik kann nicht abgespielt werden.</p>
+    </audio>
+   
+    <header class="title-bar" role="banner">
+        <div class="title-bar-content">
+            <div style="display: flex; gap: 20px;">
+                <button id="archive" onclick="window.location.href='html/archive.html'">Archiv</button>
+                <button id="music" onclick="playPauseMusic()">Music</button>
+            </div>
+            <div>
+                <canvas id="title-canvas" width="400" height="40" aria-label="Kulturinsel Moabit" role="img"></canvas>
+            </div>
+            <div class="menu-icon" onclick="toggleMenu(this)" role="button" tabindex="0" aria-label="Menü öffnen">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+        </div>
+    </header>
+
+    <nav id="menuId" class="menu" role="navigation" aria-label="Hauptmenü">
+        <div class="menu-content">
+            <a href="#" role="menuitem">About</a>
+            <a href="#" role="menuitem">Services</a>
+            <a href="#" role="menuitem">Clients</a>
+            <a href="#" role="menuitem">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="banner" role="banner">
+            <video autoplay muted loop id="background-banner-video" aria-label="Hintergrundvideo des Festivals">
+                <source src="video/upscaled.mp4" type="video/mp4">
+                <track src="video/upscaled-subtitles.vtt" kind="subtitles" srclang="de" label="Deutsch">
+                <track src="video/upscaled-description.vtt" kind="descriptions" srclang="de" label="Deutsch">
+                <p>Dein Browser unterstützt kein HTML5-Video. Das Video zeigt Impressionen vom Festival.</p>
+            </video>
+            <h1 id="banner-text" aria-label="Festival Datum">
+                <span style="display: block;">Fête du Seeee 3 Festival</span> 
+                <span>29.08. - 30.08.2025</span>
+            </h1>
+        </div>
+
+        <section id="counterId" class="counter" aria-label="Festival Countdown">
+            <h2 class="count-unit">Countdown bis zur Fête du Seeee 3!</h2>
+            <div id="inside-counter">
+                <div id="count-unit1" class="count-unit" aria-live="polite"><span id="days">00</span><span>TAGE</span></div>
+                <div id="count-unit2" class="count-unit" aria-live="polite"><span id="hours">00</span><span>STUNDEN</span></div>
+                <div id="count-unit3" class="count-unit" aria-live="polite"><span id="minutes">00</span><span>MINUTEN</span></div>
+                <div id="count-unit4" class="count-unit" aria-live="polite"><span id="seconds">00</span><span>SEKUNDEN</span></div>
+            </div>
+        </section>
+
+        <section class="scrollHero" aria-label="Scroll Bereich">
+            <h2>Hello i am scroll hero</h2>
+        </section>
+    </main>
+        
+    <footer role="contentinfo">
+        <div class="footer-bar">
+            <nav aria-label="Footer Navigation">
+                <div style="display: flex; gap: 15px;">
+                    <button class="info-buttons" onclick="window.location.href='html/jobs.html'" aria-label="Zu den Mitmachen">Mitmachen</button>
+                    <button class="info-buttons" onclick="window.location.href='html/kontakt.html'" aria-label="Zum Kontakt">Kontakt</button>
+                    <button class="info-buttons" id="impressum" onclick="window.location.href='html/impressum.html'" aria-label="Zum Impressum">Impressum</button>
+                </div>
+            </nav>
+            <div id="social-media" aria-label="Social Media Links">
+                <a href="#" class="fa fa-facebook" aria-label="Besuchen Sie uns auf Facebook"></a>
+                <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" aria-label="Besuchen Sie uns auf Instagram"></a>
+            </div>
+        </div>
+    </footer>
+    <script src="js/music-player.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/title-animation.js"></script>
 </body>
 </html>
