@@ -7,41 +7,42 @@
     <meta name="description" content="Kontakt - Kultur Insel - Fête du See">
     <meta name="keywords" content="Kontakt, Kultur Insel, Fête du See, Veranstaltungen, Festival, Kultur">
     <meta name="author" content="Kultur Insel Team">
-    <title>Impressum - Kultur Insel - Fête du See 3</title>
+    <title>Kontakt - Kultur Insel - Fête du See 3</title>
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    
+
     <style>
         body {
             overflow-x: hidden;
             width: 100vw;
             height: 100vh;
             margin: 0;
-            background-image: url('../images/buehne.jpg');
+            background-image: url('../../images/buehne.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: rgb(15, 10, 54);
             color: #f0e6d2;
-            display: flex;
-            justify-content: center; /* Horizontal zentrieren */
-            align-items: center; /* Vertikal zentrieren */
         }
-        
         .container {
-            padding: 10vb;
-            margin: 30vw 30vh;
             animation: fadeIn 2s forwards;
             justify-self: center;
             align-self: center;
+            padding: 10vb;
+            margin: 20vb auto;
             align-items: center;
             margin-top: 10%;
             background-color: rgba(0, 0, 0, 0.8);
             border-radius: 10px;
             text-align: center;
             color: #f0e6d2;
-            max-width: 90%;
+            width: 90%;
+            max-width: 900px;
         }
         h1 {
             font-size: 28px;
@@ -61,46 +62,55 @@
     <header class="title-bar">
         <div class="title-bar-content">
             <div style="display: flex; gap: 20px;">
-                <button id="archive" onclick="window.location.href='archive.html'" aria-label="Zum Archiv">Archiv</button>
+                <button id="archive" onclick="window.location.href='../archive/'" aria-label="Zum Archiv">Archiv</button>
             </div>
-                <script src="../js/music-player.js"></script>
+            <script src="../../js/music-player.js"></script>
+
             <div>
                 <canvas id="title-canvas" width="400" height="40" aria-label="Kulturinsel Moabit" role="img"></canvas>
             </div>
+            
             <div class="menu-icon" onclick="toggleMenu(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
             </div>
         </div>
-        <script src="../js/menu.js"></script>
-        <script src="../js/title-animation.js"></script>
+        <script src="../../js/menu.js"></script>
+        <script src="../../js/title-animation.js"></script>
     </header>
-    <div class="container">
-        <h1>Aktuell keine !</h1>
-    </div>
+
+    <main class="container">
+        <h1>Aktuell keine!</h1>
+        <p>Hey, danke, dass du bei uns vorbeischaust!</p>
+        <p>Wir müssen ehrlich sein: Momentan haben wir keine offenen Stellen und bitten dich, keine Initiativbewerbungen zu schicken. Wir wissen, das klingt ein bisschen wie "Bitte nicht stören", aber wir wollen dir einfach unnötigen Aufwand ersparen.</p>
+        <p>Die gute Nachricht: Sobald bei uns was frei wird, findest du es direkt hier auf der Website. Schau also gerne mal wieder rein – wer weiß, vielleicht passt es ja bald!</p>
+        <p>Danke für dein Verständnis und bis bald!</p>
+    </main>
+
     <div id= "menuId"  class="menu">
         <div class="menu-content">
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Clients</a>
-            <a href="#">Contact</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
         </div>
     </div>
 
-<footer>
-    <div class="footer-bar">
-        <div style="display: flex; gap: 15px;">
-            <button class="info-buttons" onclick="window.location.href='jobs.html'">Mitmachen</button>
-            <button class="info-buttons" onclick="window.location.href='kontakt.html'">Kontakt</button>
-            <button class="info-buttons" onclick="window.location.href='../index.html'">Home</button>
+    <footer>
+        <div class="footer-bar">
+            <div style="display: flex; gap: 15px;">
+                <button class="info-buttons" onclick="window.location.href='../../index.html'">Home</button>
+                <button class="info-buttons" onclick="window.location.href='../kontakt/'">Kontakt</button>
+                <button id="impressum" class="info-buttons" onclick="window.location.href='../impressum/'">Impressum</button>
+            </div>
+            
+            <div id="social-media">
+                <a href="#" class="fa fa-facebook" aria-label="Facebook-Seite"></a>
+                <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" 
+                    aria-label="Instagram-Seite"></a>
+            </div>
         </div>
-        <div id="social-media">
-            <a href="#" class="fa fa-facebook" aria-label="Facebook-Seite"></a>
-            <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" aria-label="Instagram-Seite"></a>
-        </div>
-    </div>
-</footer>
-
+    </footer>
 </body>
 </html>
