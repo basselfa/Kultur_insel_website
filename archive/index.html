@@ -11,8 +11,8 @@
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
     
     <style>
         body {
@@ -20,7 +20,7 @@
             width: 100vw;
             height: 100vh;
             margin: 0;
-            background-image: url('../images/buehne.jpg');
+            background-image: url('../../images/buehne.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -82,8 +82,8 @@
 
 <body>
     <header class="title-bar">
-        <audio id="background-audio"  > >
-            <source src="../music/music.mp3" type="audio/mp3">
+        <audio id="background-audio">
+            <source src="../../music/music.mp3" type="audio/mp3">
             Dein Browser unterstützt das Audio-Element nicht.
         </audio>
         
@@ -91,7 +91,7 @@
             <div style="display: flex; gap: 20px;">
                 <button id="music" onclick="playPauseMusic()">Music</button>
             </div>
-            <script src="../js/music-player.js"></script>
+            <script src="../../js/music-player.js"></script>
 
             <div>
                 <canvas id="title-canvas" width="400" height="40" aria-label="Kulturinsel Moabit" role="img"></canvas>
@@ -130,9 +130,9 @@
     <footer>
         <div class="footer-bar">
             <div style="display: flex; gap: 15px;">
-                <button class="info-buttons" onclick="window.location.href='../index.html'">Home</button>
-                <button class="info-buttons" onclick="window.location.href='kontakt.html'">Kontakt</button>
-                <button id="impressum" class="info-buttons" onclick="window.location.href='impressum.html'">Impressum</button>
+                <button class="info-buttons" onclick="window.location.href='../../index.html'">Home</button>
+                <button class="info-buttons" onclick="window.location.href='../kontakt.html'">Kontakt</button>
+                <button id="impressum" class="info-buttons" onclick="window.location.href='../impressum.html'">Impressum</button>
             </div>
             <div id="social-media">
                 <a href="#" class="fa fa-facebook" aria-label="Facebook-Seite"></a>
@@ -142,8 +142,8 @@
         </div>
     </footer>
 
-    <script src="../js/menu.js"></script>
-    <script src="../js/title-animation.js"></script>
+    <script src="../../js/menu.js"></script>
+    <script src="../../js/title-animation.js"></script>
     <script>
         // Bildergalerie-Funktionen
         class ImageGallery {
@@ -151,7 +151,7 @@
                 this.slider = document.getElementById('imageSlider');
                 this.currentSlide = 0;
                 this.slides = [];
-                this.imagePath = '../images/archive/';
+                this.imagePath = '../../images/archive/';
             }
 
             async loadImages() {
