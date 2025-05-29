@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Kontakt - Kultur Insel - Fête du See">
-    <meta name="keywords" content="Kontakt, Kultur Insel, Fête du See, Veranstaltungen, Festival, Kultur">
+    <meta name="description" content="Über uns - Kultur Insel - Fête du See">
+    <meta name="keywords" content="Über uns, Kultur Insel, Fête du See, Veranstaltungen, Festival, Kultur">
     <meta name="author" content="Kultur Insel Team">
-    <title>Impressum - Kultur Insel - Fête du See 3</title>
+    <title>Über uns - Kultur Insel - Fête du See</title>
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../css/style.css">
     <link rel="stylesheet" href="../../css/responsive.css">
+    
+
     <style>
         body {
             overflow-x: hidden;
@@ -24,24 +28,21 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: rgb(15, 10, 54);
             color: #f0e6d2;
-            display: flex;
-            justify-content: center; /* Horizontal zentrieren */
-            align-items: center; /* Vertikal zentrieren */
         }
-        
         .container {
-            padding: 10vb;
-            margin: 30vw 30vh;
             animation: fadeIn 2s forwards;
             justify-self: center;
             align-self: center;
+            padding: 10vb;
+            margin: 20vb auto;
             align-items: center;
             margin-top: 10%;
             background-color: rgba(0, 0, 0, 0.8);
             border-radius: 10px;
             text-align: center;
             color: #f0e6d2;
-            max-width: 90%;
+            width: 90%;
+            max-width: 900px;
         }
         h1 {
             font-size: 28px;
@@ -64,9 +65,11 @@
                 <button id="archive" onclick="window.location.href='../archive/'" aria-label="Zum Archiv">Archiv</button>
             </div>
             <script src="../../js/music-player.js"></script>
+
             <div>
                 <canvas id="title-canvas" width="400" height="40" aria-label="Kulturinsel Moabit" role="img"></canvas>
             </div>
+            
             <div class="menu-icon" onclick="toggleMenu(this)">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
@@ -76,9 +79,15 @@
         <script src="../../js/menu.js"></script>
         <script src="../../js/title-animation.js"></script>
     </header>
-    <div class="container">
-        <h1>Aktuell keine !</h1>
-    </div>
+
+    <main class="container">
+        <h1>Über die Kulturinsel Moabit</h1>
+        <p>Die Kulturinsel Moabit ist ein einzigartiger Ort der Begegnung und des kulturellen Austauschs mitten in Berlin. Seit unserer Gründung setzen wir uns dafür ein, kulturelle Vielfalt erlebbar zu machen und einen Raum für kreativen Ausdruck zu schaffen.</p>
+        <p>Unser Festival "Fête du Seeee" ist das Herzstück unserer Arbeit. Hier verbinden wir Musik, Kunst und Gemeinschaft in einer besonderen Atmosphäre am Wasser. Wir glauben daran, dass Kultur Menschen zusammenbringt und Brücken baut – zwischen verschiedenen Kulturen, Generationen und Lebenswelten.</p>
+        <p>Als ehrenamtlich organisierter Verein leben wir von der Leidenschaft und dem Engagement unserer Mitglieder und Unterstützer. Gemeinsam schaffen wir einen Ort, an dem Kultur nicht als Luxus, sondern als gemeinsames Erlebnis verstanden wird.</p>
+        <p>Unser Ziel ist es, die kulturelle Landschaft Moabits zu bereichern und einen Beitrag zu einem lebendigen, vielfältigen Stadtteil zu leisten. Dabei stehen für uns Offenheit, Nachhaltigkeit und Gemeinschaft im Mittelpunkt.</p>
+    </main>
+
     <div id="menuId" class="menu">
         <div class="menu-content">
             <a href="../about-us/" role="menuitem">Über uns</a>
@@ -88,19 +97,20 @@
         </div>
     </div>
 
-<footer>
-    <div class="footer-bar">
-        <div style="display: flex; gap: 15px;">
-            <button class="info-buttons" onclick="window.location.href='../mitmachen/'">Mitmachen</button>
-            <button class="info-buttons" onclick="window.location.href='../kontakt/'">Kontakt</button>
-            <button class="info-buttons" onclick="window.location.href='../../index.html'">Home</button>
+    <footer>
+        <div class="footer-bar">
+            <div style="display: flex; gap: 15px;">
+                <button class="info-buttons" onclick="window.location.href='../../index.html'">Home</button>
+                <button class="info-buttons" onclick="window.location.href='../kontakt/'">Kontakt</button>
+                <button id="impressum" class="info-buttons" onclick="window.location.href='../impressum/'">Impressum</button>
+            </div>
+            
+            <div id="social-media">
+                <a href="#" class="fa fa-facebook" aria-label="Facebook-Seite"></a>
+                <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" 
+                    aria-label="Instagram-Seite"></a>
+            </div>
         </div>
-        <div id="social-media">
-            <a href="#" class="fa fa-facebook" aria-label="Facebook-Seite"></a>
-            <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" aria-label="Instagram-Seite"></a>
-        </div>
-    </div>
-</footer>
-
+    </footer>
 </body>
 </html>
