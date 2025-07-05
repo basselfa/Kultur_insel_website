@@ -95,7 +95,7 @@
 
     <nav id="menuId" class="menu" role="navigation" aria-label="Hauptmenü">
         <div class="menu-content">
-            <a href="programm/" role="menuitem">Programm</a>
+            <a href="impressum/" role="menuitem">Impressum</a>
             <a href="uber-uns/" role="menuitem">Über uns</a>
         </div>
     </nav>
@@ -131,15 +131,12 @@
         
     <footer role="contentinfo">
         <div class="footer-bar">
-            <nav aria-label="Footer Navigation">
-                <div style="display: flex; gap: 15px;">
-                    <button class="info-buttons" onclick="window.location.href='mitmachen/'" aria-label="Zu den Mitmachen">Mitmachen</button>
-                    <button class="info-buttons" onclick="window.location.href='kontakt/'" aria-label="Zum Kontakt">Kontakt</button>
-                    <button class="info-buttons" onclick="window.location.href='programm/'" aria-label="Zum Programm">Programm</button>
-                </div>
-            </nav>
+            <div style="display: flex; gap: 15px;">
+                <button class="info-buttons" onclick="window.location.href='mitmachen/'" aria-label="Zu den Mitmachen">Mitmachen</button>
+                <button class="info-buttons" onclick="window.location.href='kontakt/'" aria-label="Zum Kontakt">Kontakt</button>
+                <button id="programm" class="info-buttons" onclick="window.location.href='programm/'" aria-label="Zum Programm">Programm</button>
+            </div>
             <div id="social-media" aria-label="Social Media Links">
-                <a href="#" class="fa fa-facebook" aria-label="Besuchen Sie uns auf Facebook"></a>
                 <a href="https://www.instagram.com/kulturinsel_moa/" class="fa fa-instagram" aria-label="Besuchen Sie uns auf Instagram"></a>
             </div>
         </div>
