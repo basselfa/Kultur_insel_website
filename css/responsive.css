@@ -30,6 +30,10 @@
         transform: none;
     }
 
+    #programm {
+        transform: none;
+    }
+
     #inside-counter {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -88,7 +92,7 @@
         display: none;
     }
 
-    #archive:hover,#music:hover {
+    #programm:hover,#archive:hover,#music:hover {
         transform: rotate(-0deg) !important;
     }
 
@@ -125,9 +129,6 @@
         align-self: end;
     }
 
-    #programm {
-        display: none;
-    }
 
     footer {
         position: fixed;
